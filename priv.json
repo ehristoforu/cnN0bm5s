@@ -445,13 +445,13 @@
       "settings": {
         "vnext": [
           {
-            "address": "168.222.254.175",
-            "port": 52841,
+            "address": "185.80.91.12",
+            "port": 43978,
             "users": [
               {
                 "encryption": "none",
                 "flow": "",
-                "id": "0e607edf-b975-407a-875d-538262d46ba0",
+                "id": "eadb0a74-1366-4b0f-9785-debb413cf0df",
                 "level": 8,
                 "security": "auto"
               }
@@ -461,12 +461,15 @@
       },
       "streamSettings": {
         "network": "xhttp",
-        "security": "tls",
-        "tlsSettings": {
+        "security": "reality",
+        "realitySettings": {
           "allowInsecure": false,
           "fingerprint": "chrome",
-          "serverName": "github.com",
-          "show": false
+          "publicKey": "AXFgKLcFKnnt0aUGdkXd3Mj2hS6UpyWUMgQvEpD2jzk",
+          "serverName": "www.apple.com",
+          "shortId": "6762",
+          "show": false,
+          "spiderX": "/rXHH0f58W67VvCd"
         }
       }
     },
@@ -625,13 +628,13 @@
       "settings": {
         "vnext": [
           {
-            "address": "168.222.254.175",
-            "port": 40015,
+            "address": "185.80.91.12",
+            "port": 50888,
             "users": [
               {
                 "encryption": "none",
                 "flow": "xtls-rprx-vision",
-                "id": "0e457d40-bb31-4483-926f-65588c1af32f",
+                "id": "05595974-328f-41f0-8b01-4fe37fb01da2",
                 "level": 8,
                 "security": "auto"
               }
@@ -641,12 +644,15 @@
       },
       "streamSettings": {
         "network": "tcp",
-        "security": "tls",
-        "tlsSettings": {
+        "security": "reality",
+        "realitySettings": {
           "allowInsecure": false,
           "fingerprint": "chrome",
-          "serverName": "github.com",
-          "show": false
+          "publicKey": "AXFgKLcFKnnt0aUGdkXd3Mj2hS6UpyWUMgQvEpD2jzk",
+          "serverName": "www.apple.com",
+          "shortId": "8f",
+          "show": false,
+          "spiderX": "/HradoL9he9Ffpyz"
         },
         "tcpSettings": {
           "header": {
@@ -1821,194 +1827,6 @@
     }
   },
   "remarks": "🇷🇺 Россия 2 | тгк: @rostunnel",
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "inboundTag": [
-          "metrics_in"
-        ],
-        "outboundTag": "metrics_out"
-      },
-      {
-        "inboundTag": [
-          "socks"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "1.1.1.1"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
-      }
-    ]
-  },
-  "stats": {}
-},
-{
-  "dns": {
-    "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
-    },
-    "queryStrategy": "UseIPv4",
-    "servers": [
-      "1.1.1.1",
-      "8.8.8.8"
-    ]
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true,
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "socks"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "http"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 11111,
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "127.0.0.1"
-      },
-      "tag": "metrics_in"
-    }
-  ],
-  "log": {
-    "loglevel": "warning"
-  },
-  "metrics": {
-    "tag": "metrics_out"
-  },
-  "meta": {
-    "serverDescription": ""
-  },
-  "outbounds": [
-    {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
-      "mux": {
-        "concurrency": -1,
-        "enabled": false,
-        "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
-      },
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "185.80.91.12",
-            "port": 50888,
-            "users": [
-              {
-                "encryption": "none",
-                "flow": "xtls-rprx-vision",
-                "id": "05595974-328f-41f0-8b01-4fe37fb01da2",
-                "level": 8,
-                "security": "auto"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "allowInsecure": false,
-          "fingerprint": "chrome",
-          "publicKey": "AXFgKLcFKnnt0aUGdkXd3Mj2hS6UpyWUMgQvEpD2jzk",
-          "serverName": "m.vk.com",
-          "shortId": "d6fc8740",
-          "show": false,
-          "spiderX": "/"
-        },
-        "tcpSettings": {
-          "header": {
-            "type": "none"
-          }
-        }
-      }
-    },
-    {
-      "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "UseIP"
-      },
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "settings": {
-        "response": {
-          "type": "http"
-        }
-      },
-      "tag": "block"
-    }
-  ],
-  "policy": {
-    "levels": {
-      "0": {
-        "statsUserDownlink": true,
-        "statsUserUplink": true
-      },
-      "8": {
-        "connIdle": 300,
-        "downlinkOnly": 1,
-        "handshake": 4,
-        "uplinkOnly": 1
-      }
-    },
-    "system": {
-      "statsInboundDownlink": true,
-      "statsInboundUplink": true,
-      "statsOutboundDownlink": true,
-      "statsOutboundUplink": true
-    }
-  },
-  "remarks": "🇷🇺 Россия->Германия | тгк: @rostunnel",
   "routing": {
     "domainStrategy": "IPIfNonMatch",
     "rules": [
