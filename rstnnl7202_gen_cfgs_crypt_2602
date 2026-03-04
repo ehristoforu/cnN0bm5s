@@ -803,193 +803,13 @@
         "settings": {
           "vnext": [
             {
-              "address": "168.222.254.175",
-              "port": 52841,
-              "users": [
-                {
-                  "encryption": "none",
-                  "flow": "",
-                  "id": "0e607edf-b975-407a-875d-538262d46ba0",
-                  "level": 8,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "xhttp",
-          "security": "tls",
-          "tlsSettings": {
-            "allowInsecure": false,
-            "fingerprint": "chrome",
-            "serverName": "github.com",
-            "show": false
-          }
-        }
-      },
-      {
-        "protocol": "freedom",
-        "settings": {
-          "domainStrategy": "UseIP"
-        },
-        "tag": "direct"
-      },
-      {
-        "protocol": "blackhole",
-        "settings": {
-          "response": {
-            "type": "http"
-          }
-        },
-        "tag": "block"
-      }
-    ],
-    "policy": {
-      "levels": {
-        "0": {
-          "statsUserDownlink": true,
-          "statsUserUplink": true
-        },
-        "8": {
-          "connIdle": 300,
-          "downlinkOnly": 1,
-          "handshake": 4,
-          "uplinkOnly": 1
-        }
-      },
-      "system": {
-        "statsInboundDownlink": true,
-        "statsInboundUplink": true,
-        "statsOutboundDownlink": true,
-        "statsOutboundUplink": true
-      }
-    },
-    "remarks": "🇩🇪 Германия 1 XHTTP | тгк: @rostunnel",
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "inboundTag": [
-            "metrics_in"
-          ],
-          "outboundTag": "metrics_out"
-        },
-        {
-          "inboundTag": [
-            "socks"
-          ],
-          "outboundTag": "proxy",
-          "port": "53"
-        },
-        {
-          "ip": [
-            "1.1.1.1"
-          ],
-          "outboundTag": "proxy",
-          "port": "53"
-        },
-        {
-          "ip": [
-            "8.8.8.8"
-          ],
-          "outboundTag": "direct",
-          "port": "53"
-        }
-      ]
-    },
-    "stats": {}
-  },
-  {
-    "dns": {
-      "hosts": {
-        "domain:googleapis.cn": "googleapis.com"
-      },
-      "queryStrategy": "UseIPv4",
-      "servers": [
-        "1.1.1.1",
-        "8.8.8.8"
-      ]
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true,
-          "userLevel": 8
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true
-        },
-        "tag": "socks"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "userLevel": 8
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true
-        },
-        "tag": "http"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 11111,
-        "protocol": "dokodemo-door",
-        "settings": {
-          "address": "127.0.0.1"
-        },
-        "tag": "metrics_in"
-      }
-    ],
-    "log": {
-      "loglevel": "warning"
-    },
-    "metrics": {
-      "tag": "metrics_out"
-    },
-    "meta": {
-      "serverDescription": ""
-    },
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "meta": {
-          "serverDescription": ""
-        },
-        "mux": {
-          "concurrency": -1,
-          "enabled": false,
-          "xudpConcurrency": 8,
-          "xudpProxyUDP443": ""
-        },
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "168.222.254.175",
-              "port": 40015,
+              "address": "138.124.106.133",
+              "port": 6443,
               "users": [
                 {
                   "encryption": "none",
                   "flow": "xtls-rprx-vision",
-                  "id": "0e457d40-bb31-4483-926f-65588c1af32f",
+                  "id": "d622af4b-2e2a-4f7a-af91-840bbdf0ca7a",
                   "level": 8,
                   "security": "auto"
                 }
@@ -999,12 +819,15 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
+          "security": "reality",
+          "realitySettings": {
             "allowInsecure": false,
             "fingerprint": "chrome",
-            "serverName": "github.com",
-            "show": false
+            "publicKey": "EhuKqEHHG-dQPFdT55oVEXAi9-cpGXPcxbpd6lGFoz4",
+            "serverName": "tradingview.com",
+            "shortId": "",
+            "show": false,
+            "spiderX": "/"
           },
           "tcpSettings": {
             "header": {
@@ -1050,7 +873,7 @@
         "statsOutboundUplink": true
       }
     },
-    "remarks": "🇩🇪 Германия 1 TCP | тгк: @rostunnel",
+    "remarks": "🇩🇪 Германия | тгк: @rostunnel",
     "routing": {
       "domainStrategy": "IPIfNonMatch",
       "rules": [
