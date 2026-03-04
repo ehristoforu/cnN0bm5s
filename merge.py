@@ -12,7 +12,7 @@ for fn in files:
     elif isinstance(data, dict):
         all_configs.append(data)
 
-Path("result.txt").write_text(
+Path("rstnnl7202_gen_cfgs_crypt_2602").write_text(
     json.dumps(all_configs, ensure_ascii=False, indent=2),
     encoding="utf-8"
 )
