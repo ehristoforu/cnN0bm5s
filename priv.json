@@ -2315,11 +2315,11 @@
         "vnext": [
           {
             "address": "185.73.126.27",
-            "port": 8443,
+            "port": 443,
             "users": [
               {
                 "encryption": "none",
-                "flow": "",
+                "flow": "xtls-rprx-vision",
                 "id": "d622af4b-2e2a-4f7a-af91-840bbdf0ca7a",
                 "level": 8,
                 "security": "auto"
@@ -2329,20 +2329,21 @@
         ]
       },
       "streamSettings": {
-        "network": "grpc",
+        "network": "tcp",
         "security": "reality",
         "realitySettings": {
           "allowInsecure": false,
-          "fingerprint": "qq",
+          "fingerprint": "firefox",
           "publicKey": "Ox2mMfiIreLprmOp6k3kRUDPgGXaNQfq4bIsyB3pmm0",
           "serverName": "kinopoisk.ru",
-          "shortId": "ae74e4dddff1ba09",
+          "shortId": "1a2b3c4d",
           "show": false,
-          "spiderX": "tv_api_sync"
+          "spiderX": "/"
         },
-        "grpcSettings": {
-          "serviceName": "tv_api_sync",
-          "multiMode": false
+        "tcpSettings": {
+          "header": {
+            "type": "none"
+          }
         }
       }
     },
