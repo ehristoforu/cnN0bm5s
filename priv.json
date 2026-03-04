@@ -82,7 +82,923 @@
       "settings": {
         "vnext": [
           {
-            "address": "144.31.14.145",
+            "address": "157.22.241.50",
+            "port": 24933,
+            "users": [
+              {
+                "encryption": "none",
+                "flow": "xtls-rprx-vision",
+                "id": "87173fb7-f9b4-45e5-96da-fad0d9098c83",
+                "level": 8,
+                "security": "auto"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "allowInsecure": false,
+          "fingerprint": "chrome",
+          "publicKey": "kQzXRkg5yun32qvKUK51_cNPicx_TK5g_PTa-pTe0nk",
+          "serverName": "www.vk.com",
+          "shortId": "34e01417",
+          "show": false,
+          "spiderX": "/"
+        },
+        "tcpSettings": {
+          "header": {
+            "type": "none"
+          }
+        }
+      }
+    },
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      },
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
+      "tag": "block"
+    }
+  ],
+  "policy": {
+    "levels": {
+      "0": {
+        "statsUserDownlink": true,
+        "statsUserUplink": true
+      },
+      "8": {
+        "connIdle": 300,
+        "downlinkOnly": 1,
+        "handshake": 4,
+        "uplinkOnly": 1
+      }
+    },
+    "system": {
+      "statsInboundDownlink": true,
+      "statsInboundUplink": true,
+      "statsOutboundDownlink": true,
+      "statsOutboundUplink": true
+    }
+  },
+  "remarks": "💫 Смарт | тгк: @rostunnel",
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "inboundTag": [
+          "metrics_in"
+        ],
+        "outboundTag": "metrics_out"
+      },
+      {
+        "inboundTag": [
+          "socks"
+        ],
+        "outboundTag": "proxy",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": "53"
+      }
+    ]
+  },
+  "stats": {}
+},
+{
+  "dns": {
+    "hosts": {
+      "domain:googleapis.cn": "googleapis.com"
+    },
+    "queryStrategy": "UseIPv4",
+    "servers": [
+      "1.1.1.1",
+      "8.8.8.8"
+    ]
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true
+      },
+      "tag": "socks"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10809,
+      "protocol": "http",
+      "settings": {
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true
+      },
+      "tag": "http"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 11111,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "metrics_in"
+    }
+  ],
+  "log": {
+    "loglevel": "warning"
+  },
+  "metrics": {
+    "tag": "metrics_out"
+  },
+  "meta": {
+    "serverDescription": ""
+  },
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "meta": {
+        "serverDescription": ""
+      },
+      "mux": {
+        "concurrency": -1,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "hysteria",
+      "settings": {
+        "address": "62.60.233.91",
+        "port": 443,
+        "version": 2,
+        "mportHopInt": 0
+      },
+      "streamSettings": {
+        "hysteriaSettings": {
+          "auth": "056eb3d8-e3d9-4eb8-bf0d-d1d80e5a43aa",
+          "version": 2
+        },
+        "network": "hysteria",
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": false,
+          "alpn": [
+            "h3"
+          ],
+          "serverName": "magic.nodes.stealthsurf.app",
+          "show": false
+        }
+      }
+    },
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      },
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
+      "tag": "block"
+    }
+  ],
+  "policy": {
+    "levels": {
+      "0": {
+        "statsUserDownlink": true,
+        "statsUserUplink": true
+      },
+      "8": {
+        "connIdle": 300,
+        "downlinkOnly": 1,
+        "handshake": 4,
+        "uplinkOnly": 1
+      }
+    },
+    "system": {
+      "statsInboundDownlink": true,
+      "statsInboundUplink": true,
+      "statsOutboundDownlink": true,
+      "statsOutboundUplink": true
+    }
+  },
+  "remarks": "🇹🇷 Турция 🔥 | тгк: @rostunnel",
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "inboundTag": [
+          "metrics_in"
+        ],
+        "outboundTag": "metrics_out"
+      },
+      {
+        "inboundTag": [
+          "socks"
+        ],
+        "outboundTag": "proxy",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": "53"
+      }
+    ]
+  },
+  "stats": {}
+},
+{
+  "dns": {
+    "hosts": {
+      "domain:googleapis.cn": "googleapis.com"
+    },
+    "queryStrategy": "UseIPv4",
+    "servers": [
+      "1.1.1.1",
+      "8.8.8.8"
+    ]
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true
+      },
+      "tag": "socks"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10809,
+      "protocol": "http",
+      "settings": {
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true
+      },
+      "tag": "http"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 11111,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "metrics_in"
+    }
+  ],
+  "log": {
+    "loglevel": "warning"
+  },
+  "metrics": {
+    "tag": "metrics_out"
+  },
+  "meta": {
+    "serverDescription": ""
+  },
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "meta": {
+        "serverDescription": ""
+      },
+      "mux": {
+        "concurrency": -1,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "168.222.254.175",
+            "port": 52841,
+            "users": [
+              {
+                "encryption": "none",
+                "flow": "",
+                "id": "2e99cd68-4be0-4667-b85d-d531cc4c7d87",
+                "level": 8,
+                "security": "auto"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": false,
+          "fingerprint": "chrome",
+          "serverName": "github.com",
+          "show": false
+        }
+      }
+    },
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      },
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
+      "tag": "block"
+    }
+  ],
+  "policy": {
+    "levels": {
+      "0": {
+        "statsUserDownlink": true,
+        "statsUserUplink": true
+      },
+      "8": {
+        "connIdle": 300,
+        "downlinkOnly": 1,
+        "handshake": 4,
+        "uplinkOnly": 1
+      }
+    },
+    "system": {
+      "statsInboundDownlink": true,
+      "statsInboundUplink": true,
+      "statsOutboundDownlink": true,
+      "statsOutboundUplink": true
+    }
+  },
+  "remarks": "🇩🇪 Германия 1 XHTTP | тгк: @rostunnel",
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "inboundTag": [
+          "metrics_in"
+        ],
+        "outboundTag": "metrics_out"
+      },
+      {
+        "inboundTag": [
+          "socks"
+        ],
+        "outboundTag": "proxy",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": "53"
+      }
+    ]
+  },
+  "stats": {}
+},
+{
+  "dns": {
+    "hosts": {
+      "domain:googleapis.cn": "googleapis.com"
+    },
+    "queryStrategy": "UseIPv4",
+    "servers": [
+      "1.1.1.1",
+      "8.8.8.8"
+    ]
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true
+      },
+      "tag": "socks"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10809,
+      "protocol": "http",
+      "settings": {
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true
+      },
+      "tag": "http"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 11111,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "metrics_in"
+    }
+  ],
+  "log": {
+    "loglevel": "warning"
+  },
+  "metrics": {
+    "tag": "metrics_out"
+  },
+  "meta": {
+    "serverDescription": ""
+  },
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "meta": {
+        "serverDescription": ""
+      },
+      "mux": {
+        "concurrency": -1,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "168.222.254.175",
+            "port": 40015,
+            "users": [
+              {
+                "encryption": "none",
+                "flow": "xtls-rprx-vision",
+                "id": "172b7b02-7dde-4c8f-8002-d35dd2790928",
+                "level": 8,
+                "security": "auto"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": false,
+          "fingerprint": "chrome",
+          "serverName": "github.com",
+          "show": false
+        },
+        "tcpSettings": {
+          "header": {
+            "type": "none"
+          }
+        }
+      }
+    },
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      },
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
+      "tag": "block"
+    }
+  ],
+  "policy": {
+    "levels": {
+      "0": {
+        "statsUserDownlink": true,
+        "statsUserUplink": true
+      },
+      "8": {
+        "connIdle": 300,
+        "downlinkOnly": 1,
+        "handshake": 4,
+        "uplinkOnly": 1
+      }
+    },
+    "system": {
+      "statsInboundDownlink": true,
+      "statsInboundUplink": true,
+      "statsOutboundDownlink": true,
+      "statsOutboundUplink": true
+    }
+  },
+  "remarks": "🇩🇪 Германия 1 TCP | тгк: @rostunnel",
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "inboundTag": [
+          "metrics_in"
+        ],
+        "outboundTag": "metrics_out"
+      },
+      {
+        "inboundTag": [
+          "socks"
+        ],
+        "outboundTag": "proxy",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": "53"
+      }
+    ]
+  },
+  "stats": {}
+},
+{
+  "dns": {
+    "hosts": {
+      "domain:googleapis.cn": "googleapis.com"
+    },
+    "queryStrategy": "UseIPv4",
+    "servers": [
+      "1.1.1.1",
+      "8.8.8.8"
+    ]
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true
+      },
+      "tag": "socks"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10809,
+      "protocol": "http",
+      "settings": {
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true
+      },
+      "tag": "http"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 11111,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "metrics_in"
+    }
+  ],
+  "log": {
+    "loglevel": "warning"
+  },
+  "metrics": {
+    "tag": "metrics_out"
+  },
+  "meta": {
+    "serverDescription": ""
+  },
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "meta": {
+        "serverDescription": ""
+      },
+      "mux": {
+        "concurrency": -1,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "82.38.63.163",
+            "port": 443,
+            "users": [
+              {
+                "encryption": "none",
+                "flow": "xtls-rprx-vision",
+                "id": "a1eb13d5-cae6-4a4d-a7ac-994a51c47336",
+                "level": 8,
+                "security": "auto"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "allowInsecure": false,
+          "fingerprint": "chrome",
+          "publicKey": "msRyxHS-k46GoQdVzEnLrI4fvfD55FkB8n61D0uZ8HY",
+          "serverName": "www.microsoft.com",
+          "shortId": "676853fe",
+          "show": false,
+          "spiderX": "/"
+        },
+        "tcpSettings": {
+          "header": {
+            "type": "none"
+          }
+        }
+      }
+    },
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      },
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
+      "tag": "block"
+    }
+  ],
+  "policy": {
+    "levels": {
+      "0": {
+        "statsUserDownlink": true,
+        "statsUserUplink": true
+      },
+      "8": {
+        "connIdle": 300,
+        "downlinkOnly": 1,
+        "handshake": 4,
+        "uplinkOnly": 1
+      }
+    },
+    "system": {
+      "statsInboundDownlink": true,
+      "statsInboundUplink": true,
+      "statsOutboundDownlink": true,
+      "statsOutboundUplink": true
+    }
+  },
+  "remarks": "🇸🇪 Швеция | тгк: @rostunnel",
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "inboundTag": [
+          "metrics_in"
+        ],
+        "outboundTag": "metrics_out"
+      },
+      {
+        "inboundTag": [
+          "socks"
+        ],
+        "outboundTag": "proxy",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": "53"
+      }
+    ]
+  },
+  "stats": {}
+},
+{
+  "dns": {
+    "hosts": {
+      "domain:googleapis.cn": "googleapis.com"
+    },
+    "queryStrategy": "UseIPv4",
+    "servers": [
+      "1.1.1.1",
+      "8.8.8.8"
+    ]
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true
+      },
+      "tag": "socks"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10809,
+      "protocol": "http",
+      "settings": {
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true
+      },
+      "tag": "http"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 11111,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "metrics_in"
+    }
+  ],
+  "log": {
+    "loglevel": "warning"
+  },
+  "metrics": {
+    "tag": "metrics_out"
+  },
+  "meta": {
+    "serverDescription": ""
+  },
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "meta": {
+        "serverDescription": ""
+      },
+      "mux": {
+        "concurrency": -1,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "193.35.17.175",
             "port": 6443,
             "users": [
               {
@@ -152,7 +1068,7 @@
       "statsOutboundUplink": true
     }
   },
-  "remarks": "🇳🇱 ☠️ P2P/ТОРРЕНТЫ | тгк: @rostunnel",
+  "remarks": "🇫🇮 Финляндия | тгк: @rostunnel",
   "routing": {
     "domainStrategy": "IPIfNonMatch",
     "rules": [
@@ -458,13 +1374,13 @@
       "settings": {
         "vnext": [
           {
-            "address": "157.22.241.50",
-            "port": 24933,
+            "address": "5.129.218.48",
+            "port": 6443,
             "users": [
               {
                 "encryption": "none",
                 "flow": "xtls-rprx-vision",
-                "id": "87173fb7-f9b4-45e5-96da-fad0d9098c83",
+                "id": "d622af4b-2e2a-4f7a-af91-840bbdf0ca7a",
                 "level": 8,
                 "security": "auto"
               }
@@ -478,9 +1394,9 @@
         "realitySettings": {
           "allowInsecure": false,
           "fingerprint": "chrome",
-          "publicKey": "kQzXRkg5yun32qvKUK51_cNPicx_TK5g_PTa-pTe0nk",
-          "serverName": "www.vk.com",
-          "shortId": "34e01417",
+          "publicKey": "EhuKqEHHG-dQPFdT55oVEXAi9-cpGXPcxbpd6lGFoz4",
+          "serverName": "tradingview.com",
+          "shortId": "",
           "show": false,
           "spiderX": "/"
         },
@@ -528,372 +1444,7 @@
       "statsOutboundUplink": true
     }
   },
-  "remarks": "💫 Смарт | тгк: @rostunnel",
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "inboundTag": [
-          "metrics_in"
-        ],
-        "outboundTag": "metrics_out"
-      },
-      {
-        "inboundTag": [
-          "socks"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "1.1.1.1"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
-      }
-    ]
-  },
-  "stats": {}
-},
-{
-  "dns": {
-    "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
-    },
-    "queryStrategy": "UseIPv4",
-    "servers": [
-      "1.1.1.1",
-      "8.8.8.8"
-    ]
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true,
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "socks"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "http"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 11111,
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "127.0.0.1"
-      },
-      "tag": "metrics_in"
-    }
-  ],
-  "log": {
-    "loglevel": "warning"
-  },
-  "metrics": {
-    "tag": "metrics_out"
-  },
-  "meta": {
-    "serverDescription": ""
-  },
-  "outbounds": [
-    {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
-      "mux": {
-        "concurrency": -1,
-        "enabled": false,
-        "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
-      },
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "168.222.254.175",
-            "port": 40015,
-            "users": [
-              {
-                "encryption": "none",
-                "flow": "xtls-rprx-vision",
-                "id": "172b7b02-7dde-4c8f-8002-d35dd2790928",
-                "level": 8,
-                "security": "auto"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "tls",
-        "tlsSettings": {
-          "allowInsecure": false,
-          "fingerprint": "chrome",
-          "serverName": "github.com",
-          "show": false
-        },
-        "tcpSettings": {
-          "header": {
-            "type": "none"
-          }
-        }
-      }
-    },
-    {
-      "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "UseIP"
-      },
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "settings": {
-        "response": {
-          "type": "http"
-        }
-      },
-      "tag": "block"
-    }
-  ],
-  "policy": {
-    "levels": {
-      "0": {
-        "statsUserDownlink": true,
-        "statsUserUplink": true
-      },
-      "8": {
-        "connIdle": 300,
-        "downlinkOnly": 1,
-        "handshake": 4,
-        "uplinkOnly": 1
-      }
-    },
-    "system": {
-      "statsInboundDownlink": true,
-      "statsInboundUplink": true,
-      "statsOutboundDownlink": true,
-      "statsOutboundUplink": true
-    }
-  },
-  "remarks": "🇩🇪 Германия 1 TCP | тгк: @rostunnel",
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "inboundTag": [
-          "metrics_in"
-        ],
-        "outboundTag": "metrics_out"
-      },
-      {
-        "inboundTag": [
-          "socks"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "1.1.1.1"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
-      }
-    ]
-  },
-  "stats": {}
-},
-{
-  "dns": {
-    "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
-    },
-    "queryStrategy": "UseIPv4",
-    "servers": [
-      "1.1.1.1",
-      "8.8.8.8"
-    ]
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true,
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "socks"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "http"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 11111,
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "127.0.0.1"
-      },
-      "tag": "metrics_in"
-    }
-  ],
-  "log": {
-    "loglevel": "warning"
-  },
-  "metrics": {
-    "tag": "metrics_out"
-  },
-  "meta": {
-    "serverDescription": ""
-  },
-  "outbounds": [
-    {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
-      "mux": {
-        "concurrency": -1,
-        "enabled": false,
-        "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
-      },
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "168.222.254.175",
-            "port": 52841,
-            "users": [
-              {
-                "encryption": "none",
-                "flow": "",
-                "id": "2e99cd68-4be0-4667-b85d-d531cc4c7d87",
-                "level": 8,
-                "security": "auto"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "xhttp",
-        "security": "tls",
-        "tlsSettings": {
-          "allowInsecure": false,
-          "fingerprint": "chrome",
-          "serverName": "github.com",
-          "show": false
-        }
-      }
-    },
-    {
-      "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "UseIP"
-      },
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "settings": {
-        "response": {
-          "type": "http"
-        }
-      },
-      "tag": "block"
-    }
-  ],
-  "policy": {
-    "levels": {
-      "0": {
-        "statsUserDownlink": true,
-        "statsUserUplink": true
-      },
-      "8": {
-        "connIdle": 300,
-        "downlinkOnly": 1,
-        "handshake": 4,
-        "uplinkOnly": 1
-      }
-    },
-    "system": {
-      "statsInboundDownlink": true,
-      "statsInboundUplink": true,
-      "statsOutboundDownlink": true,
-      "statsOutboundUplink": true
-    }
-  },
-  "remarks": "🇩🇪 Германия 1 XHTTP | тгк: @rostunnel",
+  "remarks": "🇳🇱 ☠️ P2P/ТОРРЕНТЫ | тгк: @rostunnel",
   "routing": {
     "domainStrategy": "IPIfNonMatch",
     "rules": [
@@ -1221,7 +1772,7 @@
           "fingerprint": "chrome",
           "publicKey": "6qVBeg9qlJRuo_AIi2C-Dke58Z79uzvXQo38Jw5QsCw",
           "serverName": "ads.x5.ru",
-          "shortId": "668eda32",
+          "shortId": "c98c3bb0754f37",
           "show": false,
           "spiderX": "/"
         },
@@ -1409,7 +1960,7 @@
           "fingerprint": "chrome",
           "publicKey": "AXFgKLcFKnnt0aUGdkXd3Mj2hS6UpyWUMgQvEpD2jzk",
           "serverName": "m.vk.com",
-          "shortId": "39143066790e60",
+          "shortId": "d6fc8740",
           "show": false,
           "spiderX": "/"
         },
@@ -1575,13 +2126,13 @@
       "settings": {
         "vnext": [
           {
-            "address": "193.58.121.232",
-            "port": 449,
+            "address": "51.250.16.92",
+            "port": 8444,
             "users": [
               {
                 "encryption": "none",
                 "flow": "xtls-rprx-vision",
-                "id": "ec302e89-eb36-4d1b-a092-c875fd2c5d34",
+                "id": "e1b7c66e-ba8f-4ac5-bcef-29f60750b8a8",
                 "level": 8,
                 "security": "auto"
               }
@@ -1595,9 +2146,9 @@
         "realitySettings": {
           "allowInsecure": false,
           "fingerprint": "chrome",
-          "publicKey": "O_sU0mEal3uMKNI9AHLNniiDlNZ3OJyINH9F6EZUGWU",
-          "serverName": "www.microsoft.com",
-          "shortId": "7d6a79af",
+          "publicKey": "DaIRouGSxxQDEv9WKRxD79b2Vt0fsw4yQOTeAmXUYCM",
+          "serverName": "ads.x5.ru",
+          "shortId": "1f7854fbfe",
           "show": false,
           "spiderX": "/"
         },
@@ -1645,7 +2196,195 @@
       "statsOutboundUplink": true
     }
   },
-  "remarks": "🇩🇪 Германия 2 | тгк: @rostunnel",
+  "remarks": "🇷🇺 Анти-Шатдаун 1 🔥 | тгк: @rostunnel",
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "inboundTag": [
+          "metrics_in"
+        ],
+        "outboundTag": "metrics_out"
+      },
+      {
+        "inboundTag": [
+          "socks"
+        ],
+        "outboundTag": "proxy",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": "53"
+      }
+    ]
+  },
+  "stats": {}
+},
+{
+  "dns": {
+    "hosts": {
+      "domain:googleapis.cn": "googleapis.com"
+    },
+    "queryStrategy": "UseIPv4",
+    "servers": [
+      "1.1.1.1",
+      "8.8.8.8"
+    ]
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true
+      },
+      "tag": "socks"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10809,
+      "protocol": "http",
+      "settings": {
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true
+      },
+      "tag": "http"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 11111,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "metrics_in"
+    }
+  ],
+  "log": {
+    "loglevel": "warning"
+  },
+  "metrics": {
+    "tag": "metrics_out"
+  },
+  "meta": {
+    "serverDescription": ""
+  },
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "meta": {
+        "serverDescription": ""
+      },
+      "mux": {
+        "concurrency": -1,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "51.250.83.119",
+            "port": 443,
+            "users": [
+              {
+                "encryption": "none",
+                "flow": "xtls-rprx-vision",
+                "id": "7b53fb21-8eed-47c1-ace4-9a7c0a271825",
+                "level": 8,
+                "security": "auto"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "allowInsecure": false,
+          "fingerprint": "chrome",
+          "publicKey": "qNB6qNhPtCsc_FjKI3ErQcEYWj8MmbrJu_jrvh7mxWI",
+          "serverName": "ads.x5.ru",
+          "shortId": "",
+          "show": false,
+          "spiderX": "/"
+        },
+        "tcpSettings": {
+          "header": {
+            "type": "none"
+          }
+        }
+      }
+    },
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      },
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
+      "tag": "block"
+    }
+  ],
+  "policy": {
+    "levels": {
+      "0": {
+        "statsUserDownlink": true,
+        "statsUserUplink": true
+      },
+      "8": {
+        "connIdle": 300,
+        "downlinkOnly": 1,
+        "handshake": 4,
+        "uplinkOnly": 1
+      }
+    },
+    "system": {
+      "statsInboundDownlink": true,
+      "statsInboundUplink": true,
+      "statsOutboundDownlink": true,
+      "statsOutboundUplink": true
+    }
+  },
+  "remarks": "🇷🇺 Анти-Шатдаун 2 🔥 | тгк: @rostunnel",
   "routing": {
     "domainStrategy": "IPIfNonMatch",
     "rules": [
@@ -1833,746 +2572,195 @@
       "statsOutboundUplink": true
     }
   },
-  "remarks": "🇷🇺 Анти-Шатдаун 2 🦥 | тгк: @rostunnel",
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "inboundTag": [
-          "metrics_in"
-        ],
-        "outboundTag": "metrics_out"
-      },
-      {
-        "inboundTag": [
-          "socks"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "1.1.1.1"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
-      }
-    ]
-  },
-  "stats": {}
-},
-{
-  "dns": {
-    "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
-    },
-    "queryStrategy": "UseIPv4",
-    "servers": [
-      "1.1.1.1",
-      "8.8.8.8"
-    ]
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true,
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "socks"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "http"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 11111,
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "127.0.0.1"
-      },
-      "tag": "metrics_in"
-    }
-  ],
-  "log": {
-    "loglevel": "warning"
-  },
-  "metrics": {
-    "tag": "metrics_out"
-  },
-  "meta": {
-    "serverDescription": ""
-  },
-  "outbounds": [
-    {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
-      "mux": {
-        "concurrency": -1,
-        "enabled": false,
-        "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
-      },
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "31.59.168.88",
-            "port": 6443,
-            "users": [
-              {
-                "encryption": "none",
-                "flow": "xtls-rprx-vision",
-                "id": "d622af4b-2e2a-4f7a-af91-840bbdf0ca7a",
-                "level": 8,
-                "security": "auto"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "allowInsecure": false,
-          "fingerprint": "chrome",
-          "publicKey": "EhuKqEHHG-dQPFdT55oVEXAi9-cpGXPcxbpd6lGFoz4",
-          "serverName": "tradingview.com",
-          "shortId": "",
-          "show": false,
-          "spiderX": "/"
-        },
-        "tcpSettings": {
-          "header": {
-            "type": "none"
-          }
-        }
-      }
-    },
-    {
-      "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "UseIP"
-      },
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "settings": {
-        "response": {
-          "type": "http"
-        }
-      },
-      "tag": "block"
-    }
-  ],
-  "policy": {
-    "levels": {
-      "0": {
-        "statsUserDownlink": true,
-        "statsUserUplink": true
-      },
-      "8": {
-        "connIdle": 300,
-        "downlinkOnly": 1,
-        "handshake": 4,
-        "uplinkOnly": 1
-      }
-    },
-    "system": {
-      "statsInboundDownlink": true,
-      "statsInboundUplink": true,
-      "statsOutboundDownlink": true,
-      "statsOutboundUplink": true
-    }
-  },
-  "remarks": "🇫🇮 Финляндия | тгк: @rostunnel",
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "inboundTag": [
-          "metrics_in"
-        ],
-        "outboundTag": "metrics_out"
-      },
-      {
-        "inboundTag": [
-          "socks"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "1.1.1.1"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
-      }
-    ]
-  },
-  "stats": {}
-},
-{
-  "dns": {
-    "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
-    },
-    "queryStrategy": "UseIPv4",
-    "servers": [
-      "1.1.1.1",
-      "8.8.8.8"
-    ]
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true,
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "socks"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "http"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 11111,
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "127.0.0.1"
-      },
-      "tag": "metrics_in"
-    }
-  ],
-  "log": {
-    "loglevel": "warning"
-  },
-  "metrics": {
-    "tag": "metrics_out"
-  },
-  "meta": {
-    "serverDescription": ""
-  },
-  "outbounds": [
-    {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
-      "mux": {
-        "concurrency": -1,
-        "enabled": false,
-        "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
-      },
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "51.250.16.92",
-            "port": 8444,
-            "users": [
-              {
-                "encryption": "none",
-                "flow": "xtls-rprx-vision",
-                "id": "e1b7c66e-ba8f-4ac5-bcef-29f60750b8a8",
-                "level": 8,
-                "security": "auto"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "allowInsecure": false,
-          "fingerprint": "chrome",
-          "publicKey": "DaIRouGSxxQDEv9WKRxD79b2Vt0fsw4yQOTeAmXUYCM",
-          "serverName": "ads.x5.ru",
-          "shortId": "96962fed",
-          "show": false,
-          "spiderX": "/"
-        },
-        "tcpSettings": {
-          "header": {
-            "type": "none"
-          }
-        }
-      }
-    },
-    {
-      "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "UseIP"
-      },
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "settings": {
-        "response": {
-          "type": "http"
-        }
-      },
-      "tag": "block"
-    }
-  ],
-  "policy": {
-    "levels": {
-      "0": {
-        "statsUserDownlink": true,
-        "statsUserUplink": true
-      },
-      "8": {
-        "connIdle": 300,
-        "downlinkOnly": 1,
-        "handshake": 4,
-        "uplinkOnly": 1
-      }
-    },
-    "system": {
-      "statsInboundDownlink": true,
-      "statsInboundUplink": true,
-      "statsOutboundDownlink": true,
-      "statsOutboundUplink": true
-    }
-  },
-  "remarks": "🇷🇺 Анти-Шатдаун 1 🔥 | тгк: @rostunnel",
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "inboundTag": [
-          "metrics_in"
-        ],
-        "outboundTag": "metrics_out"
-      },
-      {
-        "inboundTag": [
-          "socks"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "1.1.1.1"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
-      }
-    ]
-  },
-  "stats": {}
-},
-{
-  "dns": {
-    "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
-    },
-    "queryStrategy": "UseIPv4",
-    "servers": [
-      "1.1.1.1",
-      "8.8.8.8"
-    ]
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true,
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "socks"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "http"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 11111,
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "127.0.0.1"
-      },
-      "tag": "metrics_in"
-    }
-  ],
-  "log": {
-    "loglevel": "warning"
-  },
-  "metrics": {
-    "tag": "metrics_out"
-  },
-  "meta": {
-    "serverDescription": ""
-  },
-  "outbounds": [
-    {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
-      "mux": {
-        "concurrency": -1,
-        "enabled": false,
-        "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
-      },
-      "protocol": "hysteria",
-      "settings": {
-        "address": "62.60.233.91",
-        "port": 443,
-        "version": 2,
-        "mportHopInt": 0
-      },
-      "streamSettings": {
-        "hysteriaSettings": {
-          "auth": "056eb3d8-e3d9-4eb8-bf0d-d1d80e5a43aa",
-          "version": 2
-        },
-        "network": "hysteria",
-        "security": "tls",
-        "tlsSettings": {
-          "allowInsecure": false,
-          "alpn": [
-            "h3"
-          ],
-          "serverName": "magic.nodes.stealthsurf.app",
-          "show": false
-        }
-      }
-    },
-    {
-      "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "UseIP"
-      },
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "settings": {
-        "response": {
-          "type": "http"
-        }
-      },
-      "tag": "block"
-    }
-  ],
-  "policy": {
-    "levels": {
-      "0": {
-        "statsUserDownlink": true,
-        "statsUserUplink": true
-      },
-      "8": {
-        "connIdle": 300,
-        "downlinkOnly": 1,
-        "handshake": 4,
-        "uplinkOnly": 1
-      }
-    },
-    "system": {
-      "statsInboundDownlink": true,
-      "statsInboundUplink": true,
-      "statsOutboundDownlink": true,
-      "statsOutboundUplink": true
-    }
-  },
-  "remarks": "🇹🇷 Турция 🔥 | тгк: @rostunnel",
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "inboundTag": [
-          "metrics_in"
-        ],
-        "outboundTag": "metrics_out"
-      },
-      {
-        "inboundTag": [
-          "socks"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "1.1.1.1"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
-      }
-    ]
-  },
-  "stats": {}
-},
-{
-  "dns": {
-    "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
-    },
-    "queryStrategy": "UseIPv4",
-    "servers": [
-      "1.1.1.1",
-      "8.8.8.8"
-    ]
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true,
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "socks"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "http"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 11111,
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "127.0.0.1"
-      },
-      "tag": "metrics_in"
-    }
-  ],
-  "log": {
-    "loglevel": "warning"
-  },
-  "metrics": {
-    "tag": "metrics_out"
-  },
-  "meta": {
-    "serverDescription": ""
-  },
-  "outbounds": [
-    {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
-      "mux": {
-        "concurrency": -1,
-        "enabled": false,
-        "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
-      },
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "94.181.45.218",
-            "port": 6443,
-            "users": [
-              {
-                "encryption": "none",
-                "flow": "xtls-rprx-vision",
-                "id": "d622af4b-2e2a-4f7a-af91-840bbdf0ca7a",
-                "level": 8,
-                "security": "auto"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "allowInsecure": false,
-          "fingerprint": "qq",
-          "publicKey": "EhuKqEHHG-dQPFdT55oVEXAi9-cpGXPcxbpd6lGFoz4",
-          "serverName": "max.ru",
-          "shortId": "",
-          "show": false,
-          "spiderX": "/"
-        },
-        "tcpSettings": {
-          "header": {
-            "type": "none"
-          }
-        }
-      }
-    },
-    {
-      "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "UseIP"
-      },
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "settings": {
-        "response": {
-          "type": "http"
-        }
-      },
-      "tag": "block"
-    }
-  ],
-  "policy": {
-    "levels": {
-      "0": {
-        "statsUserDownlink": true,
-        "statsUserUplink": true
-      },
-      "8": {
-        "connIdle": 300,
-        "downlinkOnly": 1,
-        "handshake": 4,
-        "uplinkOnly": 1
-      }
-    },
-    "system": {
-      "statsInboundDownlink": true,
-      "statsInboundUplink": true,
-      "statsOutboundDownlink": true,
-      "statsOutboundUplink": true
-    }
-  },
   "remarks": "🇷🇺 Анти-Шатдаун 3 🦥 | тгк: @rostunnel",
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "inboundTag": [
+          "metrics_in"
+        ],
+        "outboundTag": "metrics_out"
+      },
+      {
+        "inboundTag": [
+          "socks"
+        ],
+        "outboundTag": "proxy",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": "53"
+      }
+    ]
+  },
+  "stats": {}
+},
+{
+  "dns": {
+    "hosts": {
+      "domain:googleapis.cn": "googleapis.com"
+    },
+    "queryStrategy": "UseIPv4",
+    "servers": [
+      "1.1.1.1",
+      "8.8.8.8"
+    ]
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true
+      },
+      "tag": "socks"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10809,
+      "protocol": "http",
+      "settings": {
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true
+      },
+      "tag": "http"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 11111,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "metrics_in"
+    }
+  ],
+  "log": {
+    "loglevel": "warning"
+  },
+  "metrics": {
+    "tag": "metrics_out"
+  },
+  "meta": {
+    "serverDescription": ""
+  },
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "meta": {
+        "serverDescription": ""
+      },
+      "mux": {
+        "concurrency": -1,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "185.73.126.27",
+            "port": 443,
+            "users": [
+              {
+                "encryption": "none",
+                "flow": "xtls-rprx-vision",
+                "id": "d622af4b-2e2a-4f7a-af91-840bbdf0ca7a",
+                "level": 8,
+                "security": "auto"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "allowInsecure": false,
+          "fingerprint": "firefox",
+          "publicKey": "Ox2mMfiIreLprmOp6k3kRUDPgGXaNQfq4bIsyB3pmm0",
+          "serverName": "kinopoisk.ru",
+          "shortId": "1a2b3c4d",
+          "show": false,
+          "spiderX": "/"
+        },
+        "tcpSettings": {
+          "header": {
+            "type": "none"
+          }
+        }
+      }
+    },
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      },
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
+      "tag": "block"
+    }
+  ],
+  "policy": {
+    "levels": {
+      "0": {
+        "statsUserDownlink": true,
+        "statsUserUplink": true
+      },
+      "8": {
+        "connIdle": 300,
+        "downlinkOnly": 1,
+        "handshake": 4,
+        "uplinkOnly": 1
+      }
+    },
+    "system": {
+      "statsInboundDownlink": true,
+      "statsInboundUplink": true,
+      "statsOutboundDownlink": true,
+      "statsOutboundUplink": true
+    }
+  },
+  "remarks": "🇷🇺 Анти-Шатдаун 4 🦥 | тгк: @rostunnel",
   "routing": {
     "domainStrategy": "IPIfNonMatch",
     "rules": [
