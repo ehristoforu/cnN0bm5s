@@ -451,7 +451,7 @@
               {
                 "encryption": "none",
                 "flow": "",
-                "id": "2e99cd68-4be0-4667-b85d-d531cc4c7d87",
+                "id": "0e607edf-b975-407a-875d-538262d46ba0",
                 "level": 8,
                 "security": "auto"
               }
@@ -631,7 +631,7 @@
               {
                 "encryption": "none",
                 "flow": "xtls-rprx-vision",
-                "id": "172b7b02-7dde-4c8f-8002-d35dd2790928",
+                "id": "0e457d40-bb31-4483-926f-65588c1af32f",
                 "level": 8,
                 "security": "auto"
               }
