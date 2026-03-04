@@ -440,13 +440,13 @@
         "settings": {
           "vnext": [
             {
-              "address": "157.22.241.50",
-              "port": 24933,
+              "address": "45.151.182.251",
+              "port": 11046,
               "users": [
                 {
                   "encryption": "none",
                   "flow": "xtls-rprx-vision",
-                  "id": "87173fb7-f9b4-45e5-96da-fad0d9098c83",
+                  "id": "dae47700-f0f4-4b93-8bee-c84fda788fc4",
                   "level": 8,
                   "security": "auto"
                 }
@@ -460,9 +460,9 @@
           "realitySettings": {
             "allowInsecure": false,
             "fingerprint": "chrome",
-            "publicKey": "kQzXRkg5yun32qvKUK51_cNPicx_TK5g_PTa-pTe0nk",
-            "serverName": "www.vk.com",
-            "shortId": "34e01417",
+            "publicKey": "T4wWttlZrJMVEizdEonKIMNG_jos21MrWVkqkAp0TmU",
+            "serverName": "",
+            "shortId": "a0867a8e",
             "show": false,
             "spiderX": "/"
           },
@@ -1920,7 +1920,7 @@
         "settings": {
           "vnext": [
             {
-              "address": "185.73.126.27",
+              "address": "95.181.212.157",
               "port": 6443,
               "users": [
                 {
