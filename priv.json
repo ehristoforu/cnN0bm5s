@@ -445,7 +445,7 @@
       "settings": {
         "vnext": [
           {
-            "address": "138.124.106.133",
+            "address": "144.31.25.165",
             "port": 6443,
             "users": [
               {
@@ -464,7 +464,7 @@
         "security": "reality",
         "realitySettings": {
           "allowInsecure": false,
-          "fingerprint": "chrome",
+          "fingerprint": "edge",
           "publicKey": "EhuKqEHHG-dQPFdT55oVEXAi9-cpGXPcxbpd6lGFoz4",
           "serverName": "tradingview.com",
           "shortId": "",
@@ -633,13 +633,13 @@
       "settings": {
         "vnext": [
           {
-            "address": "82.38.63.163",
+            "address": "45.8.93.233",
             "port": 443,
             "users": [
               {
                 "encryption": "none",
                 "flow": "xtls-rprx-vision",
-                "id": "a1eb13d5-cae6-4a4d-a7ac-994a51c47336",
+                "id": "d622af4b-2e2a-4f7a-af91-840bbdf0ca7a",
                 "level": 8,
                 "security": "auto"
               }
@@ -652,10 +652,10 @@
         "security": "reality",
         "realitySettings": {
           "allowInsecure": false,
-          "fingerprint": "chrome",
-          "publicKey": "msRyxHS-k46GoQdVzEnLrI4fvfD55FkB8n61D0uZ8HY",
-          "serverName": "www.microsoft.com",
-          "shortId": "676853fe",
+          "fingerprint": "edge",
+          "publicKey": "c4Mg3v790FPQbXO8uBoJysJYdFFJPhOw2TlnzC45a1U",
+          "serverName": "1013a--ma--8935--cp199.stbid.ru",
+          "shortId": "",
           "show": false,
           "spiderX": "/"
         },
@@ -821,8 +821,8 @@
       "settings": {
         "vnext": [
           {
-            "address": "193.35.17.175",
-            "port": 6443,
+            "address": "144.31.212.144",
+            "port": 443,
             "users": [
               {
                 "encryption": "none",
@@ -840,9 +840,9 @@
         "security": "reality",
         "realitySettings": {
           "allowInsecure": false,
-          "fingerprint": "chrome",
-          "publicKey": "EhuKqEHHG-dQPFdT55oVEXAi9-cpGXPcxbpd6lGFoz4",
-          "serverName": "tradingview.com",
+          "fingerprint": "edge",
+          "publicKey": "c4Mg3v790FPQbXO8uBoJysJYdFFJPhOw2TlnzC45a1U",
+          "serverName": "1013a--ma--8935--cp199.stbid.ru",
           "shortId": "",
           "show": false,
           "spiderX": "/"
@@ -1010,7 +1010,7 @@
         "vnext": [
           {
             "address": "155.212.244.177",
-            "port": 6443,
+            "port": 443,
             "users": [
               {
                 "encryption": "none",
@@ -1028,9 +1028,9 @@
         "security": "reality",
         "realitySettings": {
           "allowInsecure": false,
-          "fingerprint": "chrome",
-          "publicKey": "EhuKqEHHG-dQPFdT55oVEXAi9-cpGXPcxbpd6lGFoz4",
-          "serverName": "tradingview.com",
+          "fingerprint": "qq",
+          "publicKey": "c4Mg3v790FPQbXO8uBoJysJYdFFJPhOw2TlnzC45a1U",
+          "serverName": "1013a--ma--8935--cp199.stbid.ru",
           "shortId": "",
           "show": false,
           "spiderX": "/"
@@ -1197,8 +1197,8 @@
       "settings": {
         "vnext": [
           {
-            "address": "5.129.218.48",
-            "port": 6443,
+            "address": "72.56.100.35",
+            "port": 443,
             "users": [
               {
                 "encryption": "none",
@@ -1216,9 +1216,9 @@
         "security": "reality",
         "realitySettings": {
           "allowInsecure": false,
-          "fingerprint": "chrome",
-          "publicKey": "EhuKqEHHG-dQPFdT55oVEXAi9-cpGXPcxbpd6lGFoz4",
-          "serverName": "tradingview.com",
+          "fingerprint": "edge",
+          "publicKey": "c4Mg3v790FPQbXO8uBoJysJYdFFJPhOw2TlnzC45a1U",
+          "serverName": "1013a--ma--8935--cp199.stbid.ru",
           "shortId": "",
           "show": false,
           "spiderX": "/"
@@ -1385,13 +1385,13 @@
       "settings": {
         "vnext": [
           {
-            "address": "95.181.212.157",
-            "port": 6443,
+            "address": "185.147.27.6",
+            "port": 843,
             "users": [
               {
                 "encryption": "none",
                 "flow": "xtls-rprx-vision",
-                "id": "d622af4b-2e2a-4f7a-af91-840bbdf0ca7a",
+                "id": "e1b7c66e-ba8f-4ac5-bcef-29f60750b8a8",
                 "level": 8,
                 "security": "auto"
               }
@@ -1405,9 +1405,9 @@
         "realitySettings": {
           "allowInsecure": false,
           "fingerprint": "chrome",
-          "publicKey": "EhuKqEHHG-dQPFdT55oVEXAi9-cpGXPcxbpd6lGFoz4",
-          "serverName": "tradingview.com",
-          "shortId": "",
+          "publicKey": "mtBArpboH_OF7Z_tsIAmNlYTK5h0fjxVsZKz91KE03s",
+          "serverName": "hls-svod.itunes.apple.com",
+          "shortId": "825867",
           "show": false,
           "spiderX": "/"
         },
@@ -1573,13 +1573,13 @@
       "settings": {
         "vnext": [
           {
-            "address": "185.80.91.12",
-            "port": 28933,
+            "address": "212.119.42.208",
+            "port": 443,
             "users": [
               {
                 "encryption": "none",
                 "flow": "xtls-rprx-vision",
-                "id": "a9af5277-8245-45a7-97be-f3c9fcd4ad6c",
+                "id": "d622af4b-2e2a-4f7a-af91-840bbdf0ca7a",
                 "level": 8,
                 "security": "auto"
               }
@@ -1592,10 +1592,10 @@
         "security": "reality",
         "realitySettings": {
           "allowInsecure": false,
-          "fingerprint": "chrome",
-          "publicKey": "6qVBeg9qlJRuo_AIi2C-Dke58Z79uzvXQo38Jw5QsCw",
-          "serverName": "ads.x5.ru",
-          "shortId": "668eda32",
+          "fingerprint": "edge",
+          "publicKey": "c4Mg3v790FPQbXO8uBoJysJYdFFJPhOw2TlnzC45a1U",
+          "serverName": "1013a--ma--8935--cp199.stbid.ru",
+          "shortId": "",
           "show": false,
           "spiderX": "/"
         },
@@ -1761,194 +1761,6 @@
       "settings": {
         "vnext": [
           {
-            "address": "185.80.91.12",
-            "port": 50888,
-            "users": [
-              {
-                "encryption": "none",
-                "flow": "xtls-rprx-vision",
-                "id": "05595974-328f-41f0-8b01-4fe37fb01da2",
-                "level": 8,
-                "security": "auto"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "allowInsecure": false,
-          "fingerprint": "chrome",
-          "publicKey": "AXFgKLcFKnnt0aUGdkXd3Mj2hS6UpyWUMgQvEpD2jzk",
-          "serverName": "m.vk.com",
-          "shortId": "39143066790e60",
-          "show": false,
-          "spiderX": "/"
-        },
-        "tcpSettings": {
-          "header": {
-            "type": "none"
-          }
-        }
-      }
-    },
-    {
-      "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "UseIP"
-      },
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "settings": {
-        "response": {
-          "type": "http"
-        }
-      },
-      "tag": "block"
-    }
-  ],
-  "policy": {
-    "levels": {
-      "0": {
-        "statsUserDownlink": true,
-        "statsUserUplink": true
-      },
-      "8": {
-        "connIdle": 300,
-        "downlinkOnly": 1,
-        "handshake": 4,
-        "uplinkOnly": 1
-      }
-    },
-    "system": {
-      "statsInboundDownlink": true,
-      "statsInboundUplink": true,
-      "statsOutboundDownlink": true,
-      "statsOutboundUplink": true
-    }
-  },
-  "remarks": "🇷🇺 Россия->Германия | тгк: @rostunnel",
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "inboundTag": [
-          "metrics_in"
-        ],
-        "outboundTag": "metrics_out"
-      },
-      {
-        "inboundTag": [
-          "socks"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "1.1.1.1"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
-      }
-    ]
-  },
-  "stats": {}
-},
-{
-  "dns": {
-    "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
-    },
-    "queryStrategy": "UseIPv4",
-    "servers": [
-      "1.1.1.1",
-      "8.8.8.8"
-    ]
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true,
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "socks"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "http"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 11111,
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "127.0.0.1"
-      },
-      "tag": "metrics_in"
-    }
-  ],
-  "log": {
-    "loglevel": "warning"
-  },
-  "metrics": {
-    "tag": "metrics_out"
-  },
-  "meta": {
-    "serverDescription": ""
-  },
-  "outbounds": [
-    {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
-      "mux": {
-        "concurrency": -1,
-        "enabled": false,
-        "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
-      },
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
             "address": "51.250.16.92",
             "port": 8444,
             "users": [
@@ -1971,7 +1783,7 @@
           "fingerprint": "chrome",
           "publicKey": "DaIRouGSxxQDEv9WKRxD79b2Vt0fsw4yQOTeAmXUYCM",
           "serverName": "ads.x5.ru",
-          "shortId": "96962fed",
+          "shortId": "28a059440d3d5ba1",
           "show": false,
           "spiderX": "/"
         },
@@ -2137,13 +1949,13 @@
       "settings": {
         "vnext": [
           {
-            "address": "51.250.16.92",
-            "port": 8444,
+            "address": "212.109.218.246",
+            "port": 443,
             "users": [
               {
                 "encryption": "none",
                 "flow": "xtls-rprx-vision",
-                "id": "e1b7c66e-ba8f-4ac5-bcef-29f60750b8a8",
+                "id": "a1eb13d5-cae6-4a4d-a7ac-994a51c47336",
                 "level": 8,
                 "security": "auto"
               }
@@ -2157,9 +1969,9 @@
         "realitySettings": {
           "allowInsecure": false,
           "fingerprint": "chrome",
-          "publicKey": "DaIRouGSxxQDEv9WKRxD79b2Vt0fsw4yQOTeAmXUYCM",
-          "serverName": "ads.x5.ru",
-          "shortId": "96962fed",
+          "publicKey": "wc7XX1UlXuod17TrIfunLUlQ3Ko7y9AzMTeX3E_7kmY",
+          "serverName": "sso.passport.yandex.ru",
+          "shortId": "778660d1",
           "show": false,
           "spiderX": "/"
         },
@@ -2207,7 +2019,7 @@
       "statsOutboundUplink": true
     }
   },
-  "remarks": "🇷🇺 Анти-Шатдаун 2 🔥 | тгк: @rostunnel",
+  "remarks": "🇷🇺 Анти-Шатдаун 2 🦥 | тгк: @rostunnel",
   "routing": {
     "domainStrategy": "IPIfNonMatch",
     "rules": [
@@ -2325,13 +2137,13 @@
       "settings": {
         "vnext": [
           {
-            "address": "212.109.218.246",
+            "address": "94.181.45.218",
             "port": 443,
             "users": [
               {
                 "encryption": "none",
                 "flow": "xtls-rprx-vision",
-                "id": "a1eb13d5-cae6-4a4d-a7ac-994a51c47336",
+                "id": "d622af4b-2e2a-4f7a-af91-840bbdf0ca7a",
                 "level": 8,
                 "security": "auto"
               }
@@ -2344,10 +2156,10 @@
         "security": "reality",
         "realitySettings": {
           "allowInsecure": false,
-          "fingerprint": "chrome",
-          "publicKey": "wc7XX1UlXuod17TrIfunLUlQ3Ko7y9AzMTeX3E_7kmY",
-          "serverName": "sso.passport.yandex.ru",
-          "shortId": "778660d1",
+          "fingerprint": "qq",
+          "publicKey": "c4Mg3v790FPQbXO8uBoJysJYdFFJPhOw2TlnzC45a1U",
+          "serverName": "1013a--ma--8935--cp199.stbid.ru",
+          "shortId": "",
           "show": false,
           "spiderX": "/"
         },
