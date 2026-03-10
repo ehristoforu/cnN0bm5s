@@ -63,20 +63,13 @@
   "metrics": {
     "tag": "metrics_out"
   },
-  "meta": {
-    "serverDescription": ""
-  },
   "outbounds": [
     {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
       "mux": {
         "concurrency": -1,
         "enabled": false,
         "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
+        "xudpProxyUDP443": "xudp"
       },
       "protocol": "vless",
       "settings": {
@@ -103,9 +96,20 @@
           "allowInsecure": false,
           "fingerprint": "chrome",
           "serverName": "github.com",
-          "show": false
+          "show": false,
+          "alpn": [
+            "h2",
+            "http/1.1",
+            "h3"
+          ]
+        },
+        "xhttpSettings": {
+          "path": "/",
+          "host": "144.31.215.30",
+          "mode": "auto"
         }
-      }
+      },
+      "tag": "proxy"
     },
     {
       "protocol": "freedom",
@@ -243,20 +247,13 @@
   "metrics": {
     "tag": "metrics_out"
   },
-  "meta": {
-    "serverDescription": ""
-  },
   "outbounds": [
     {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
       "mux": {
         "concurrency": -1,
         "enabled": false,
         "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
+        "xudpProxyUDP443": "xudp"
       },
       "protocol": "vless",
       "settings": {
@@ -283,14 +280,20 @@
           "allowInsecure": false,
           "fingerprint": "chrome",
           "serverName": "github.com",
-          "show": false
+          "show": false,
+          "alpn": [
+            "h2",
+            "http/1.1",
+            "h3"
+          ]
         },
         "tcpSettings": {
           "header": {
             "type": "none"
           }
         }
-      }
+      },
+      "tag": "proxy"
     },
     {
       "protocol": "freedom",
@@ -428,15 +431,8 @@
   "metrics": {
     "tag": "metrics_out"
   },
-  "meta": {
-    "serverDescription": ""
-  },
   "outbounds": [
     {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
       "mux": {
         "concurrency": -1,
         "enabled": false,
@@ -448,13 +444,12 @@
         "address": "150.241.65.18",
         "port": 2026,
         "version": 2,
-        "mportHopInt": 0,
         "obfs": "salamander",
         "obfsPassword": "8CSYg2AJ1Hr1t52SScio8ME3yE6nrmH"
       },
       "streamSettings": {
         "hysteriaSettings": {
-          "auth": "rstnnl",
+          "auth": "rstnnl:pJqj9jh9BhY88Wxk5ue9PbN04QbZr8lg",
           "version": 2
         },
         "network": "hysteria",
@@ -467,7 +462,8 @@
           "serverName": "rstnnl.duckdns.org",
           "show": false
         }
-      }
+      },
+      "tag": "proxy"
     },
     {
       "protocol": "freedom",
@@ -605,15 +601,8 @@
   "metrics": {
     "tag": "metrics_out"
   },
-  "meta": {
-    "serverDescription": ""
-  },
   "outbounds": [
     {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
       "mux": {
         "concurrency": -1,
         "enabled": false,
@@ -655,7 +644,8 @@
             "type": "none"
           }
         }
-      }
+      },
+      "tag": "proxy"
     },
     {
       "protocol": "freedom",
@@ -793,15 +783,8 @@
   "metrics": {
     "tag": "metrics_out"
   },
-  "meta": {
-    "serverDescription": ""
-  },
   "outbounds": [
     {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
       "mux": {
         "concurrency": -1,
         "enabled": false,
@@ -843,7 +826,8 @@
             "type": "none"
           }
         }
-      }
+      },
+      "tag": "proxy"
     },
     {
       "protocol": "freedom",
@@ -981,15 +965,8 @@
   "metrics": {
     "tag": "metrics_out"
   },
-  "meta": {
-    "serverDescription": ""
-  },
   "outbounds": [
     {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
       "mux": {
         "concurrency": -1,
         "enabled": false,
@@ -1031,7 +1008,8 @@
             "type": "none"
           }
         }
-      }
+      },
+      "tag": "proxy"
     },
     {
       "protocol": "freedom",
@@ -1169,15 +1147,8 @@
   "metrics": {
     "tag": "metrics_out"
   },
-  "meta": {
-    "serverDescription": ""
-  },
   "outbounds": [
     {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
       "mux": {
         "concurrency": -1,
         "enabled": false,
@@ -1219,7 +1190,8 @@
             "type": "none"
           }
         }
-      }
+      },
+      "tag": "proxy"
     },
     {
       "protocol": "freedom",
@@ -1357,15 +1329,8 @@
   "metrics": {
     "tag": "metrics_out"
   },
-  "meta": {
-    "serverDescription": ""
-  },
   "outbounds": [
     {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
       "mux": {
         "concurrency": -1,
         "enabled": false,
@@ -1407,7 +1372,8 @@
             "type": "none"
           }
         }
-      }
+      },
+      "tag": "proxy"
     },
     {
       "protocol": "freedom",
@@ -1545,15 +1511,8 @@
   "metrics": {
     "tag": "metrics_out"
   },
-  "meta": {
-    "serverDescription": ""
-  },
   "outbounds": [
     {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
       "mux": {
         "concurrency": -1,
         "enabled": false,
@@ -1595,7 +1554,8 @@
             "type": "none"
           }
         }
-      }
+      },
+      "tag": "proxy"
     },
     {
       "protocol": "freedom",
@@ -1733,15 +1693,8 @@
   "metrics": {
     "tag": "metrics_out"
   },
-  "meta": {
-    "serverDescription": ""
-  },
   "outbounds": [
     {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
       "mux": {
         "concurrency": -1,
         "enabled": false,
@@ -1783,7 +1736,8 @@
             "type": "none"
           }
         }
-      }
+      },
+      "tag": "proxy"
     },
     {
       "protocol": "freedom",
@@ -1921,15 +1875,8 @@
   "metrics": {
     "tag": "metrics_out"
   },
-  "meta": {
-    "serverDescription": ""
-  },
   "outbounds": [
     {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
       "mux": {
         "concurrency": -1,
         "enabled": false,
@@ -1971,7 +1918,8 @@
             "type": "none"
           }
         }
-      }
+      },
+      "tag": "proxy"
     },
     {
       "protocol": "freedom",
@@ -2109,15 +2057,8 @@
   "metrics": {
     "tag": "metrics_out"
   },
-  "meta": {
-    "serverDescription": ""
-  },
   "outbounds": [
     {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
       "mux": {
         "concurrency": -1,
         "enabled": false,
@@ -2159,7 +2100,8 @@
             "type": "none"
           }
         }
-      }
+      },
+      "tag": "proxy"
     },
     {
       "protocol": "freedom",
