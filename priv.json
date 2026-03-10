@@ -2,7 +2,9 @@
 {
   "dns": {
     "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
+      "domain:googleapis.cn": "googleapis.com",
+      "cloudflare-dns.com": "1.1.1.1",
+      "dns.google": "8.8.8.8"
     },
     "queryStrategy": "UseIPv4",
     "servers": [
@@ -95,8 +97,11 @@
         "tlsSettings": {
           "allowInsecure": false,
           "fingerprint": "chrome",
+          "publicKey": "",
           "serverName": "github.com",
+          "shortId": "",
           "show": false,
+          "spiderX": "",
           "alpn": [
             "h2",
             "http/1.1",
@@ -104,9 +109,12 @@
           ]
         },
         "xhttpSettings": {
-          "path": "/",
           "host": "144.31.215.30",
-          "mode": "auto"
+          "mode": "auto",
+          "path": "/",
+          "scMaxConcurrentPosts": 10,
+          "scMaxEachPostBytes": 1000000,
+          "scMinPostsIntervalMs": 30
         }
       },
       "tag": "proxy"
@@ -150,8 +158,22 @@
   },
   "remarks": "🇩🇪 Германия XHTTP | тгк: @rostunnel",
   "routing": {
-    "domainStrategy": "IPIfNonMatch",
+    "domainStrategy": "IPOnDemand",
     "rules": [
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": 443
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": 443
+      },
       {
         "inboundTag": [
           "metrics_in"
@@ -159,25 +181,27 @@
         "outboundTag": "metrics_out"
       },
       {
-        "inboundTag": [
-          "socks"
+        "ip": [
+          "10.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "169.254.0.0/16",
+          "224.0.0.0/4",
+          "255.255.255.255"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
+        "outboundTag": "direct"
+      },
+      {
+        "domain": [
+          "geosite:refilter"
+        ],
+        "outboundTag": "proxy"
       },
       {
         "ip": [
-          "1.1.1.1"
+          "geoip:refilter"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
+        "outboundTag": "proxy"
       }
     ]
   },
@@ -186,7 +210,9 @@
 {
   "dns": {
     "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
+      "domain:googleapis.cn": "googleapis.com",
+      "cloudflare-dns.com": "1.1.1.1",
+      "dns.google": "8.8.8.8"
     },
     "queryStrategy": "UseIPv4",
     "servers": [
@@ -279,8 +305,11 @@
         "tlsSettings": {
           "allowInsecure": false,
           "fingerprint": "chrome",
+          "publicKey": "",
           "serverName": "github.com",
+          "shortId": "",
           "show": false,
+          "spiderX": "",
           "alpn": [
             "h2",
             "http/1.1",
@@ -334,8 +363,22 @@
   },
   "remarks": "🇩🇪 Германия TCP | тгк: @rostunnel",
   "routing": {
-    "domainStrategy": "IPIfNonMatch",
+    "domainStrategy": "IPOnDemand",
     "rules": [
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": 443
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": 443
+      },
       {
         "inboundTag": [
           "metrics_in"
@@ -343,25 +386,27 @@
         "outboundTag": "metrics_out"
       },
       {
-        "inboundTag": [
-          "socks"
+        "ip": [
+          "10.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "169.254.0.0/16",
+          "224.0.0.0/4",
+          "255.255.255.255"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
+        "outboundTag": "direct"
+      },
+      {
+        "domain": [
+          "geosite:refilter"
+        ],
+        "outboundTag": "proxy"
       },
       {
         "ip": [
-          "1.1.1.1"
+          "geoip:refilter"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
+        "outboundTag": "proxy"
       }
     ]
   },
@@ -370,7 +415,9 @@
 {
   "dns": {
     "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
+      "domain:googleapis.cn": "googleapis.com",
+      "cloudflare-dns.com": "1.1.1.1",
+      "dns.google": "8.8.8.8"
     },
     "queryStrategy": "UseIPv4",
     "servers": [
@@ -504,8 +551,22 @@
   },
   "remarks": "🇸🇪 Швеция | тгк: @rostunnel",
   "routing": {
-    "domainStrategy": "IPIfNonMatch",
+    "domainStrategy": "IPOnDemand",
     "rules": [
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": 443
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": 443
+      },
       {
         "inboundTag": [
           "metrics_in"
@@ -513,25 +574,27 @@
         "outboundTag": "metrics_out"
       },
       {
-        "inboundTag": [
-          "socks"
+        "ip": [
+          "10.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "169.254.0.0/16",
+          "224.0.0.0/4",
+          "255.255.255.255"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
+        "outboundTag": "direct"
+      },
+      {
+        "domain": [
+          "geosite:refilter"
+        ],
+        "outboundTag": "proxy"
       },
       {
         "ip": [
-          "1.1.1.1"
+          "geoip:refilter"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
+        "outboundTag": "proxy"
       }
     ]
   },
@@ -540,7 +603,9 @@
 {
   "dns": {
     "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
+      "domain:googleapis.cn": "googleapis.com",
+      "cloudflare-dns.com": "1.1.1.1",
+      "dns.google": "8.8.8.8"
     },
     "queryStrategy": "UseIPv4",
     "servers": [
@@ -686,8 +751,22 @@
   },
   "remarks": "🇫🇮 Финляндия | тгк: @rostunnel",
   "routing": {
-    "domainStrategy": "IPIfNonMatch",
+    "domainStrategy": "IPOnDemand",
     "rules": [
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": 443
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": 443
+      },
       {
         "inboundTag": [
           "metrics_in"
@@ -695,25 +774,27 @@
         "outboundTag": "metrics_out"
       },
       {
-        "inboundTag": [
-          "socks"
+        "ip": [
+          "10.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "169.254.0.0/16",
+          "224.0.0.0/4",
+          "255.255.255.255"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
+        "outboundTag": "direct"
+      },
+      {
+        "domain": [
+          "geosite:refilter"
+        ],
+        "outboundTag": "proxy"
       },
       {
         "ip": [
-          "1.1.1.1"
+          "geoip:refilter"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
+        "outboundTag": "proxy"
       }
     ]
   },
@@ -722,7 +803,9 @@
 {
   "dns": {
     "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
+      "domain:googleapis.cn": "googleapis.com",
+      "cloudflare-dns.com": "1.1.1.1",
+      "dns.google": "8.8.8.8"
     },
     "queryStrategy": "UseIPv4",
     "servers": [
@@ -868,8 +951,22 @@
   },
   "remarks": "🇹🇷 Турция | тгк: @rostunnel",
   "routing": {
-    "domainStrategy": "IPIfNonMatch",
+    "domainStrategy": "IPOnDemand",
     "rules": [
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": 443
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": 443
+      },
       {
         "inboundTag": [
           "metrics_in"
@@ -877,25 +974,27 @@
         "outboundTag": "metrics_out"
       },
       {
-        "inboundTag": [
-          "socks"
+        "ip": [
+          "10.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "169.254.0.0/16",
+          "224.0.0.0/4",
+          "255.255.255.255"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
+        "outboundTag": "direct"
+      },
+      {
+        "domain": [
+          "geosite:refilter"
+        ],
+        "outboundTag": "proxy"
       },
       {
         "ip": [
-          "1.1.1.1"
+          "geoip:refilter"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
+        "outboundTag": "proxy"
       }
     ]
   },
@@ -904,7 +1003,9 @@
 {
   "dns": {
     "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
+      "domain:googleapis.cn": "googleapis.com",
+      "cloudflare-dns.com": "1.1.1.1",
+      "dns.google": "8.8.8.8"
     },
     "queryStrategy": "UseIPv4",
     "servers": [
@@ -1050,8 +1151,22 @@
   },
   "remarks": "🇵🇱 🎮 Игровой | тгк: @rostunnel",
   "routing": {
-    "domainStrategy": "IPIfNonMatch",
+    "domainStrategy": "IPOnDemand",
     "rules": [
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": 443
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": 443
+      },
       {
         "inboundTag": [
           "metrics_in"
@@ -1059,25 +1174,27 @@
         "outboundTag": "metrics_out"
       },
       {
-        "inboundTag": [
-          "socks"
+        "ip": [
+          "10.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "169.254.0.0/16",
+          "224.0.0.0/4",
+          "255.255.255.255"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
+        "outboundTag": "direct"
+      },
+      {
+        "domain": [
+          "geosite:refilter"
+        ],
+        "outboundTag": "proxy"
       },
       {
         "ip": [
-          "1.1.1.1"
+          "geoip:refilter"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
+        "outboundTag": "proxy"
       }
     ]
   },
@@ -1086,7 +1203,9 @@
 {
   "dns": {
     "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
+      "domain:googleapis.cn": "googleapis.com",
+      "cloudflare-dns.com": "1.1.1.1",
+      "dns.google": "8.8.8.8"
     },
     "queryStrategy": "UseIPv4",
     "servers": [
@@ -1232,8 +1351,22 @@
   },
   "remarks": "🇳🇱 ☠️ P2P/Торренты | тгк: @rostunnel",
   "routing": {
-    "domainStrategy": "IPIfNonMatch",
+    "domainStrategy": "IPOnDemand",
     "rules": [
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": 443
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": 443
+      },
       {
         "inboundTag": [
           "metrics_in"
@@ -1241,25 +1374,27 @@
         "outboundTag": "metrics_out"
       },
       {
-        "inboundTag": [
-          "socks"
+        "ip": [
+          "10.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "169.254.0.0/16",
+          "224.0.0.0/4",
+          "255.255.255.255"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
+        "outboundTag": "direct"
+      },
+      {
+        "domain": [
+          "geosite:refilter"
+        ],
+        "outboundTag": "proxy"
       },
       {
         "ip": [
-          "1.1.1.1"
+          "geoip:refilter"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
+        "outboundTag": "proxy"
       }
     ]
   },
@@ -1268,7 +1403,9 @@
 {
   "dns": {
     "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
+      "domain:googleapis.cn": "googleapis.com",
+      "cloudflare-dns.com": "1.1.1.1",
+      "dns.google": "8.8.8.8"
     },
     "queryStrategy": "UseIPv4",
     "servers": [
@@ -1414,8 +1551,22 @@
   },
   "remarks": "🇷🇺 Россия | тгк: @rostunnel",
   "routing": {
-    "domainStrategy": "IPIfNonMatch",
+    "domainStrategy": "IPOnDemand",
     "rules": [
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": 443
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": 443
+      },
       {
         "inboundTag": [
           "metrics_in"
@@ -1423,25 +1574,27 @@
         "outboundTag": "metrics_out"
       },
       {
-        "inboundTag": [
-          "socks"
+        "ip": [
+          "10.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "169.254.0.0/16",
+          "224.0.0.0/4",
+          "255.255.255.255"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
+        "outboundTag": "direct"
+      },
+      {
+        "domain": [
+          "geosite:refilter"
+        ],
+        "outboundTag": "proxy"
       },
       {
         "ip": [
-          "1.1.1.1"
+          "geoip:refilter"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
+        "outboundTag": "proxy"
       }
     ]
   },
@@ -1450,7 +1603,9 @@
 {
   "dns": {
     "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
+      "domain:googleapis.cn": "googleapis.com",
+      "cloudflare-dns.com": "1.1.1.1",
+      "dns.google": "8.8.8.8"
     },
     "queryStrategy": "UseIPv4",
     "servers": [
@@ -1596,8 +1751,22 @@
   },
   "remarks": "🇷🇺 Анти-Шатдаун 1 🔥 | тгк: @rostunnel",
   "routing": {
-    "domainStrategy": "IPIfNonMatch",
+    "domainStrategy": "IPOnDemand",
     "rules": [
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": 443
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": 443
+      },
       {
         "inboundTag": [
           "metrics_in"
@@ -1605,25 +1774,27 @@
         "outboundTag": "metrics_out"
       },
       {
-        "inboundTag": [
-          "socks"
+        "ip": [
+          "10.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "169.254.0.0/16",
+          "224.0.0.0/4",
+          "255.255.255.255"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
+        "outboundTag": "direct"
+      },
+      {
+        "domain": [
+          "geosite:refilter"
+        ],
+        "outboundTag": "proxy"
       },
       {
         "ip": [
-          "1.1.1.1"
+          "geoip:refilter"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
+        "outboundTag": "proxy"
       }
     ]
   },
@@ -1632,7 +1803,9 @@
 {
   "dns": {
     "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
+      "domain:googleapis.cn": "googleapis.com",
+      "cloudflare-dns.com": "1.1.1.1",
+      "dns.google": "8.8.8.8"
     },
     "queryStrategy": "UseIPv4",
     "servers": [
@@ -1778,8 +1951,22 @@
   },
   "remarks": "🇷🇺 Анти-Шатдаун 2 🦥 | тгк: @rostunnel",
   "routing": {
-    "domainStrategy": "IPIfNonMatch",
+    "domainStrategy": "IPOnDemand",
     "rules": [
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": 443
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": 443
+      },
       {
         "inboundTag": [
           "metrics_in"
@@ -1787,25 +1974,27 @@
         "outboundTag": "metrics_out"
       },
       {
-        "inboundTag": [
-          "socks"
+        "ip": [
+          "10.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "169.254.0.0/16",
+          "224.0.0.0/4",
+          "255.255.255.255"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
+        "outboundTag": "direct"
+      },
+      {
+        "domain": [
+          "geosite:refilter"
+        ],
+        "outboundTag": "proxy"
       },
       {
         "ip": [
-          "1.1.1.1"
+          "geoip:refilter"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
+        "outboundTag": "proxy"
       }
     ]
   },
@@ -1814,7 +2003,9 @@
 {
   "dns": {
     "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
+      "domain:googleapis.cn": "googleapis.com",
+      "cloudflare-dns.com": "1.1.1.1",
+      "dns.google": "8.8.8.8"
     },
     "queryStrategy": "UseIPv4",
     "servers": [
@@ -1960,8 +2151,22 @@
   },
   "remarks": "🇷🇺 Анти-Шатдаун 3 🦥 | тгк: @rostunnel",
   "routing": {
-    "domainStrategy": "IPIfNonMatch",
+    "domainStrategy": "IPOnDemand",
     "rules": [
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": 443
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": 443
+      },
       {
         "inboundTag": [
           "metrics_in"
@@ -1969,25 +2174,27 @@
         "outboundTag": "metrics_out"
       },
       {
-        "inboundTag": [
-          "socks"
+        "ip": [
+          "10.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "169.254.0.0/16",
+          "224.0.0.0/4",
+          "255.255.255.255"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
+        "outboundTag": "direct"
+      },
+      {
+        "domain": [
+          "geosite:refilter"
+        ],
+        "outboundTag": "proxy"
       },
       {
         "ip": [
-          "1.1.1.1"
+          "geoip:refilter"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
+        "outboundTag": "proxy"
       }
     ]
   },
@@ -1996,7 +2203,9 @@
 {
   "dns": {
     "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
+      "domain:googleapis.cn": "googleapis.com",
+      "cloudflare-dns.com": "1.1.1.1",
+      "dns.google": "8.8.8.8"
     },
     "queryStrategy": "UseIPv4",
     "servers": [
@@ -2142,8 +2351,22 @@
   },
   "remarks": "🇷🇺 Анти-Шатдаун 4 🦥 | тгк: @rostunnel",
   "routing": {
-    "domainStrategy": "IPIfNonMatch",
+    "domainStrategy": "IPOnDemand",
     "rules": [
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": 443
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": 443
+      },
       {
         "inboundTag": [
           "metrics_in"
@@ -2151,25 +2374,27 @@
         "outboundTag": "metrics_out"
       },
       {
-        "inboundTag": [
-          "socks"
+        "ip": [
+          "10.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "169.254.0.0/16",
+          "224.0.0.0/4",
+          "255.255.255.255"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
+        "outboundTag": "direct"
+      },
+      {
+        "domain": [
+          "geosite:refilter"
+        ],
+        "outboundTag": "proxy"
       },
       {
         "ip": [
-          "1.1.1.1"
+          "geoip:refilter"
         ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
+        "outboundTag": "proxy"
       }
     ]
   },
