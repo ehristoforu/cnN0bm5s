@@ -360,14 +360,22 @@
   {
     "dns": {
       "hosts": {
-        "domain:googleapis.cn": "googleapis.com",
         "cloudflare-dns.com": "1.1.1.1",
         "dns.google": "8.8.8.8"
       },
       "queryStrategy": "UseIPv4",
       "servers": [
-        "1.1.1.1",
-        "8.8.8.8"
+        "https://cloudflare-dns.com/dns-query",
+        {
+          "address": "https://cloudflare-dns.com/dns-query",
+          "domains": [
+            "geosite:refilter"
+          ]
+        },
+        {
+          "address": "https://dns.google/dns-query",
+          "domains": []
+        }
       ]
     },
     "inbounds": [
@@ -418,12 +426,19 @@
       }
     ],
     "log": {
-      "loglevel": "warning"
+      "loglevel": "debug"
     },
     "metrics": {
       "tag": "metrics_out"
     },
     "outbounds": [
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIP"
+        },
+        "tag": "direct"
+      },
       {
         "mux": {
           "concurrency": -1,
@@ -440,7 +455,6 @@
               "users": [
                 {
                   "encryption": "none",
-                  "flow": "",
                   "id": "0c0387a1-baa8-4850-9cf7-0aa55b3fa7b3",
                   "level": 8,
                   "security": "auto"
@@ -454,6 +468,11 @@
           "security": "tls",
           "tlsSettings": {
             "allowInsecure": false,
+            "alpn": [
+              "h2",
+              "http/1.1",
+              "h3"
+            ],
             "fingerprint": "chrome",
             "publicKey": "",
             "serverName": "github.com",
@@ -462,7 +481,7 @@
             "spiderX": ""
           },
           "xhttpSettings": {
-            "host": "",
+            "host": "144.31.215.30",
             "mode": "auto",
             "path": "/",
             "scMaxConcurrentPosts": 10,
@@ -471,13 +490,6 @@
           }
         },
         "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "settings": {
-          "domainStrategy": "UseIP"
-        },
-        "tag": "direct"
       },
       {
         "protocol": "blackhole",
@@ -563,14 +575,22 @@
   {
     "dns": {
       "hosts": {
-        "domain:googleapis.cn": "googleapis.com",
         "cloudflare-dns.com": "1.1.1.1",
         "dns.google": "8.8.8.8"
       },
       "queryStrategy": "UseIPv4",
       "servers": [
-        "1.1.1.1",
-        "8.8.8.8"
+        "https://cloudflare-dns.com/dns-query",
+        {
+          "address": "https://cloudflare-dns.com/dns-query",
+          "domains": [
+            "geosite:refilter"
+          ]
+        },
+        {
+          "address": "https://dns.google/dns-query",
+          "domains": []
+        }
       ]
     },
     "inbounds": [
@@ -621,12 +641,19 @@
       }
     ],
     "log": {
-      "loglevel": "warning"
+      "loglevel": "debug"
     },
     "metrics": {
       "tag": "metrics_out"
     },
     "outbounds": [
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIP"
+        },
+        "tag": "direct"
+      },
       {
         "mux": {
           "concurrency": -1,
@@ -655,29 +682,24 @@
         "streamSettings": {
           "network": "tcp",
           "security": "tls",
-          "tlsSettings": {
-            "allowInsecure": false,
-            "fingerprint": "chrome",
-            "publicKey": "",
-            "serverName": "github.com",
-            "shortId": "",
-            "show": false,
-            "spiderX": ""
-          },
           "tcpSettings": {
             "header": {
               "type": "none"
             }
+          },
+          "tlsSettings": {
+            "allowInsecure": false,
+            "alpn": [
+              "h2",
+              "http/1.1",
+              "h3"
+            ],
+            "fingerprint": "chrome",
+            "serverName": "github.com",
+            "show": false
           }
         },
         "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "settings": {
-          "domainStrategy": "UseIP"
-        },
-        "tag": "direct"
       },
       {
         "protocol": "blackhole",
@@ -763,14 +785,22 @@
   {
     "dns": {
       "hosts": {
-        "domain:googleapis.cn": "googleapis.com",
         "cloudflare-dns.com": "1.1.1.1",
         "dns.google": "8.8.8.8"
       },
       "queryStrategy": "UseIPv4",
       "servers": [
-        "1.1.1.1",
-        "8.8.8.8"
+        "https://cloudflare-dns.com/dns-query",
+        {
+          "address": "https://cloudflare-dns.com/dns-query",
+          "domains": [
+            "geosite:refilter"
+          ]
+        },
+        {
+          "address": "https://dns.google/dns-query",
+          "domains": []
+        }
       ]
     },
     "inbounds": [
@@ -821,12 +851,19 @@
       }
     ],
     "log": {
-      "loglevel": "warning"
+      "loglevel": "debug"
     },
     "metrics": {
       "tag": "metrics_out"
     },
     "outbounds": [
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIP"
+        },
+        "tag": "direct"
+      },
       {
         "mux": {
           "concurrency": -1,
@@ -854,16 +891,17 @@
             ],
             "serverName": "rstnnl.duckdns.org",
             "show": false
-          }
+          },
+          "udpmasks": [
+            {
+              "settings": {
+                "password": "8CSYg2AJ1Hr1t52SScio8ME3yE6nrmH"
+              },
+              "type": "salamander"
+            }
+          ]
         },
         "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "settings": {
-          "domainStrategy": "UseIP"
-        },
-        "tag": "direct"
       },
       {
         "protocol": "blackhole",
