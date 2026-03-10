@@ -71,7 +71,7 @@
         "concurrency": -1,
         "enabled": false,
         "xudpConcurrency": 8,
-        "xudpProxyUDP443": "xudp"
+        "xudpProxyUDP443": ""
       },
       "protocol": "vless",
       "settings": {
@@ -101,15 +101,10 @@
           "serverName": "github.com",
           "shortId": "",
           "show": false,
-          "spiderX": "",
-          "alpn": [
-            "h2",
-            "http/1.1",
-            "h3"
-          ]
+          "spiderX": ""
         },
         "xhttpSettings": {
-          "host": "144.31.215.30",
+          "host": "",
           "mode": "auto",
           "path": "/",
           "scMaxConcurrentPosts": 10,
@@ -279,7 +274,7 @@
         "concurrency": -1,
         "enabled": false,
         "xudpConcurrency": 8,
-        "xudpProxyUDP443": "xudp"
+        "xudpProxyUDP443": ""
       },
       "protocol": "vless",
       "settings": {
@@ -309,12 +304,7 @@
           "serverName": "github.com",
           "shortId": "",
           "show": false,
-          "spiderX": "",
-          "alpn": [
-            "h2",
-            "http/1.1",
-            "h3"
-          ]
+          "spiderX": ""
         },
         "tcpSettings": {
           "header": {
@@ -490,9 +480,7 @@
       "settings": {
         "address": "150.241.65.18",
         "port": 2026,
-        "version": 2,
-        "obfs": "salamander",
-        "obfsPassword": "8CSYg2AJ1Hr1t52SScio8ME3yE6nrmH"
+        "version": 2
       },
       "streamSettings": {
         "hysteriaSettings": {
