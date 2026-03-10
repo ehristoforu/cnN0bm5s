@@ -359,22 +359,19 @@
   },
   {
     "dns": {
-      "hosts": {
-        "domain:googleapis.cn": "googleapis.com",
-        "cloudflare-dns.com": "1.1.1.1",
-        "dns.google": "8.8.8.8"
-      },
-      "queryStrategy": "UseIPv4",
+      "queryStrategy": "UseIP",
       "servers": [
-        "1.1.1.1",
-        "8.8.8.8"
-      ]
+        {
+          "address": "8.8.8.8",
+          "skipFallback": false
+        }
+      ],
+      "tag": "dns_out"
     },
     "inbounds": [
       {
-        "listen": "127.0.0.1",
         "port": 10808,
-        "protocol": "socks",
+        "protocol": "mixed",
         "settings": {
           "auth": "noauth",
           "udp": true,
@@ -384,90 +381,70 @@
           "destOverride": [
             "http",
             "tls",
-            "quic"
+            "quic",
+            "fakedns"
           ],
           "enabled": true
         },
-        "tag": "socks"
+        "tag": "mixed"
       },
       {
-        "listen": "127.0.0.1",
         "port": 10809,
         "protocol": "http",
         "settings": {
           "userLevel": 8
         },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true
-        },
         "tag": "http"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 11111,
-        "protocol": "dokodemo-door",
-        "settings": {
-          "address": "127.0.0.1"
-        },
-        "tag": "metrics_in"
       }
     ],
     "log": {
       "loglevel": "warning"
     },
-    "metrics": {
-      "tag": "metrics_out"
-    },
+    "meta": null,
     "outbounds": [
       {
-        "mux": {
-          "concurrency": -1,
-          "enabled": false,
-          "xudpConcurrency": 8,
-          "xudpProxyUDP443": "xudp"
-        },
         "protocol": "vless",
         "settings": {
-          "vnext": [
-            {
-              "address": "144.31.215.150",
-              "port": 52841,
-              "users": [
-                {
-                  "encryption": "none",
-                  "flow": "",
-                  "id": "0c0387a1-baa8-4850-9cf7-0aa55b3fa7b3",
-                  "level": 8,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
+          "address": "144.31.215.150",
+          "encryption": "none",
+          "id": "0c0387a1-baa8-4850-9cf7-0aa55b3fa7b3",
+          "port": 52841
         },
         "streamSettings": {
           "network": "xhttp",
-          "security": "tls",
-          "tlsSettings": {
-            "allowInsecure": false,
+          "realitySettings": {
             "fingerprint": "chrome",
-            "publicKey": "",
+            "mldsa65Verify": "",
+            "publicKey": "PEHpMd1NnZe3GqZek2annXrpjuaTKnRLE5k7VYZl_AY",
             "serverName": "github.com",
-            "shortId": "",
+            "shortId": "d93397bd02da",
             "show": false,
-            "spiderX": ""
+            "spiderX": "/JZMzZzqkPrLbKHa"
           },
+          "security": "reality",
           "xhttpSettings": {
+            "headers": {},
             "host": "144.31.215.30",
             "mode": "auto",
+            "noSSEHeader": false,
             "path": "/",
-            "scMaxConcurrentPosts": 10,
-            "scMaxEachPostBytes": 1000000,
-            "scMinPostsIntervalMs": 30
+            "scMaxBufferedPosts": 30,
+            "scMaxEachPostBytes": "1000000",
+            "scStreamUpServerSecs": "20-80",
+            "seqKey": "",
+            "seqPlacement": "",
+            "sessionKey": "",
+            "sessionPlacement": "",
+            "uplinkChunkSize": 0,
+            "uplinkDataKey": "",
+            "uplinkDataPlacement": "",
+            "uplinkHTTPMethod": "",
+            "xPaddingBytes": "100-1000",
+            "xPaddingHeader": "",
+            "xPaddingKey": "",
+            "xPaddingMethod": "",
+            "xPaddingObfsMode": false,
+            "xPaddingPlacement": ""
           }
         },
         "tag": "proxy"
@@ -475,7 +452,9 @@
       {
         "protocol": "freedom",
         "settings": {
-          "domainStrategy": "UseIP"
+          "domainStrategy": "AsIs",
+          "noises": [],
+          "redirect": ""
         },
         "tag": "direct"
       },
@@ -491,10 +470,6 @@
     ],
     "policy": {
       "levels": {
-        "0": {
-          "statsUserDownlink": true,
-          "statsUserUplink": true
-        },
         "8": {
           "connIdle": 300,
           "downlinkOnly": 1,
@@ -503,58 +478,18 @@
         }
       },
       "system": {
-        "statsInboundDownlink": true,
-        "statsInboundUplink": true,
         "statsOutboundDownlink": true,
         "statsOutboundUplink": true
       }
     },
     "remarks": "🇩🇪 Германия XHTTP | тгк: @rostunnel",
     "routing": {
-      "domainStrategy": "IPOnDemand",
+      "domainStrategy": "AsIs",
       "rules": [
         {
-          "ip": [
-            "1.1.1.1"
-          ],
+          "network": "tcp,udp",
           "outboundTag": "proxy",
-          "port": 443
-        },
-        {
-          "ip": [
-            "8.8.8.8"
-          ],
-          "outboundTag": "direct",
-          "port": 443
-        },
-        {
-          "inboundTag": [
-            "metrics_in"
-          ],
-          "outboundTag": "metrics_out"
-        },
-        {
-          "ip": [
-            "10.0.0.0/8",
-            "172.16.0.0/12",
-            "192.168.0.0/16",
-            "169.254.0.0/16",
-            "224.0.0.0/4",
-            "255.255.255.255"
-          ],
-          "outboundTag": "direct"
-        },
-        {
-          "domain": [
-            "geosite:refilter"
-          ],
-          "outboundTag": "proxy"
-        },
-        {
-          "ip": [
-            "geoip:refilter"
-          ],
-          "outboundTag": "proxy"
+          "type": "field"
         }
       ]
     },
@@ -562,22 +497,19 @@
   },
   {
     "dns": {
-      "hosts": {
-        "domain:googleapis.cn": "googleapis.com",
-        "cloudflare-dns.com": "1.1.1.1",
-        "dns.google": "8.8.8.8"
-      },
-      "queryStrategy": "UseIPv4",
+      "queryStrategy": "UseIP",
       "servers": [
-        "1.1.1.1",
-        "8.8.8.8"
-      ]
+        {
+          "address": "8.8.8.8",
+          "skipFallback": false
+        }
+      ],
+      "tag": "dns_out"
     },
     "inbounds": [
       {
-        "listen": "127.0.0.1",
         "port": 10808,
-        "protocol": "socks",
+        "protocol": "mixed",
         "settings": {
           "auth": "noauth",
           "udp": true,
@@ -587,83 +519,48 @@
           "destOverride": [
             "http",
             "tls",
-            "quic"
+            "quic",
+            "fakedns"
           ],
           "enabled": true
         },
-        "tag": "socks"
+        "tag": "mixed"
       },
       {
-        "listen": "127.0.0.1",
         "port": 10809,
         "protocol": "http",
         "settings": {
           "userLevel": 8
         },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true
-        },
         "tag": "http"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 11111,
-        "protocol": "dokodemo-door",
-        "settings": {
-          "address": "127.0.0.1"
-        },
-        "tag": "metrics_in"
       }
     ],
     "log": {
       "loglevel": "warning"
     },
-    "metrics": {
-      "tag": "metrics_out"
-    },
+    "meta": null,
     "outbounds": [
       {
-        "mux": {
-          "concurrency": -1,
-          "enabled": false,
-          "xudpConcurrency": 8,
-          "xudpProxyUDP443": "xudp"
-        },
         "protocol": "vless",
         "settings": {
-          "vnext": [
-            {
-              "address": "144.31.215.150",
-              "port": 40015,
-              "users": [
-                {
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision",
-                  "id": "558f4037-ec22-4294-b6b6-40c10dc57ea5",
-                  "level": 8,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
+          "address": "144.31.215.150",
+          "encryption": "none",
+          "flow": "xtls-rprx-vision",
+          "id": "558f4037-ec22-4294-b6b6-40c10dc57ea5",
+          "port": 40015
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "reality",
           "realitySettings": {
-            "allowInsecure": false,
             "fingerprint": "chrome",
+            "mldsa65Verify": "",
             "publicKey": "6m8o6kkFR2sDrnnEblmlb0y2qqmj7tvG89-JJ3IbWC0",
             "serverName": "github.com",
-            "shortId": "4aae38178ea3",
+            "shortId": "9e881efaab56d64b",
             "show": false,
-            "spiderX": "/"
+            "spiderX": "/MxoeYHLGJJADYhb"
           },
+          "security": "reality",
           "tcpSettings": {
             "header": {
               "type": "none"
@@ -675,7 +572,9 @@
       {
         "protocol": "freedom",
         "settings": {
-          "domainStrategy": "UseIP"
+          "domainStrategy": "AsIs",
+          "noises": [],
+          "redirect": ""
         },
         "tag": "direct"
       },
@@ -691,10 +590,6 @@
     ],
     "policy": {
       "levels": {
-        "0": {
-          "statsUserDownlink": true,
-          "statsUserUplink": true
-        },
         "8": {
           "connIdle": 300,
           "downlinkOnly": 1,
@@ -703,246 +598,18 @@
         }
       },
       "system": {
-        "statsInboundDownlink": true,
-        "statsInboundUplink": true,
         "statsOutboundDownlink": true,
         "statsOutboundUplink": true
       }
     },
     "remarks": "🇩🇪 Германия TCP | тгк: @rostunnel",
     "routing": {
-      "domainStrategy": "IPOnDemand",
+      "domainStrategy": "AsIs",
       "rules": [
         {
-          "ip": [
-            "1.1.1.1"
-          ],
+          "network": "tcp,udp",
           "outboundTag": "proxy",
-          "port": 443
-        },
-        {
-          "ip": [
-            "8.8.8.8"
-          ],
-          "outboundTag": "direct",
-          "port": 443
-        },
-        {
-          "inboundTag": [
-            "metrics_in"
-          ],
-          "outboundTag": "metrics_out"
-        },
-        {
-          "ip": [
-            "10.0.0.0/8",
-            "172.16.0.0/12",
-            "192.168.0.0/16",
-            "169.254.0.0/16",
-            "224.0.0.0/4",
-            "255.255.255.255"
-          ],
-          "outboundTag": "direct"
-        },
-        {
-          "domain": [
-            "geosite:refilter"
-          ],
-          "outboundTag": "proxy"
-        },
-        {
-          "ip": [
-            "geoip:refilter"
-          ],
-          "outboundTag": "proxy"
-        }
-      ]
-    },
-    "stats": {}
-  },
-  {
-    "dns": {
-      "hosts": {
-        "domain:googleapis.cn": "googleapis.com",
-        "cloudflare-dns.com": "1.1.1.1",
-        "dns.google": "8.8.8.8"
-      },
-      "queryStrategy": "UseIPv4",
-      "servers": [
-        "1.1.1.1",
-        "8.8.8.8"
-      ]
-    },
-    "inbounds": [
-      {
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true,
-          "userLevel": 8
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true
-        },
-        "tag": "socks"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {
-          "userLevel": 8
-        },
-        "sniffing": {
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "enabled": true
-        },
-        "tag": "http"
-      },
-      {
-        "listen": "127.0.0.1",
-        "port": 11111,
-        "protocol": "dokodemo-door",
-        "settings": {
-          "address": "127.0.0.1"
-        },
-        "tag": "metrics_in"
-      }
-    ],
-    "log": {
-      "loglevel": "warning"
-    },
-    "metrics": {
-      "tag": "metrics_out"
-    },
-    "outbounds": [
-      {
-        "mux": {
-          "concurrency": -1,
-          "enabled": false,
-          "xudpConcurrency": 8,
-          "xudpProxyUDP443": ""
-        },
-        "protocol": "hysteria",
-        "settings": {
-          "address": "150.241.65.18",
-          "port": 2026,
-          "version": 2,
-          "obfs": "salamander",
-          "obfsPassword": "8CSYg2AJ1Hr1t52SScio8ME3yE6nrmH"
-        },
-        "streamSettings": {
-          "hysteriaSettings": {
-            "auth": "rstnnl",
-            "version": 2
-          },
-          "network": "hysteria",
-          "security": "tls",
-          "tlsSettings": {
-            "allowInsecure": false,
-            "alpn": [
-              "h3"
-            ],
-            "serverName": "rstnnl.duckdns.org",
-            "show": false
-          }
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "freedom",
-        "settings": {
-          "domainStrategy": "UseIP"
-        },
-        "tag": "direct"
-      },
-      {
-        "protocol": "blackhole",
-        "settings": {
-          "response": {
-            "type": "http"
-          }
-        },
-        "tag": "block"
-      }
-    ],
-    "policy": {
-      "levels": {
-        "0": {
-          "statsUserDownlink": true,
-          "statsUserUplink": true
-        },
-        "8": {
-          "connIdle": 300,
-          "downlinkOnly": 1,
-          "handshake": 4,
-          "uplinkOnly": 1
-        }
-      },
-      "system": {
-        "statsInboundDownlink": true,
-        "statsInboundUplink": true,
-        "statsOutboundDownlink": true,
-        "statsOutboundUplink": true
-      }
-    },
-    "remarks": "🇸🇪 Швеция | тгк: @rostunnel",
-    "routing": {
-      "domainStrategy": "IPOnDemand",
-      "rules": [
-        {
-          "ip": [
-            "1.1.1.1"
-          ],
-          "outboundTag": "proxy",
-          "port": 443
-        },
-        {
-          "ip": [
-            "8.8.8.8"
-          ],
-          "outboundTag": "direct",
-          "port": 443
-        },
-        {
-          "inboundTag": [
-            "metrics_in"
-          ],
-          "outboundTag": "metrics_out"
-        },
-        {
-          "ip": [
-            "10.0.0.0/8",
-            "172.16.0.0/12",
-            "192.168.0.0/16",
-            "169.254.0.0/16",
-            "224.0.0.0/4",
-            "255.255.255.255"
-          ],
-          "outboundTag": "direct"
-        },
-        {
-          "domain": [
-            "geosite:refilter"
-          ],
-          "outboundTag": "proxy"
-        },
-        {
-          "ip": [
-            "geoip:refilter"
-          ],
-          "outboundTag": "proxy"
+          "type": "field"
         }
       ]
     },
