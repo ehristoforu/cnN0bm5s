@@ -617,6 +617,135 @@
   },
   {
     "dns": {
+      "queryStrategy": "UseIP",
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "skipFallback": false
+        }
+      ],
+      "tag": "dns_out"
+    },
+    "inbounds": [
+      {
+        "port": 10808,
+        "protocol": "mixed",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic",
+            "fakedns"
+          ],
+          "enabled": true
+        },
+        "tag": "mixed"
+      },
+      {
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "meta": null,
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": -1,
+          "enabled": false,
+          "xudpConcurrency": 8,
+          "xudpProxyUDP443": ""
+        },
+        "protocol": "hysteria",
+        "settings": {
+          "address": "150.241.65.18",
+          "port": 2026,
+          "version": 2
+        },
+        "streamSettings": {
+          "hysteriaSettings": {
+            "auth": "rstnnl:OdAee0iXQALGJNhMVDnhA79WZoyqMse6",
+            "version": 2
+          },
+          "network": "hysteria",
+          "security": "tls",
+          "tlsSettings": {
+            "allowInsecure": false,
+            "alpn": [
+              "h3"
+            ],
+            "pinnedPeerCertSha256": "056212681af37d1b38be89047d054b544254cd97d411b510efa1e59d131169a9",
+            "serverName": "rstnnl.duckdns.org",
+            "show": false
+          },
+          "udpmasks": [
+            {
+              "settings": {
+                "password": "Tf5I2lqED0q2SvBVT0CmukW0ap3lyKto"
+              },
+              "type": "salamander"
+            }
+          ]
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIP"
+        },
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "policy": {
+      "levels": {
+        "8": {
+          "connIdle": 300,
+          "downlinkOnly": 1,
+          "handshake": 4,
+          "uplinkOnly": 1
+        }
+      },
+      "system": {
+        "statsOutboundDownlink": true,
+        "statsOutboundUplink": true
+      }
+    },
+    "remarks": "🇸🇪 Швеция | тгк: @rostunnel",
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "network": "tcp,udp",
+          "outboundTag": "proxy",
+          "type": "field"
+        }
+      ]
+    },
+    "stats": {}
+  },
+  {
+    "dns": {
       "hosts": {
         "domain:googleapis.cn": "googleapis.com",
         "cloudflare-dns.com": "1.1.1.1",

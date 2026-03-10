@@ -1,265 +1,389 @@
 [
-{
+  {
     "dns": {
-        "queryStrategy": "UseIP",
-        "servers": [
-            {
-                "address": "8.8.8.8",
-                "skipFallback": false
-            }
-        ],
-        "tag": "dns_out"
+      "queryStrategy": "UseIP",
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "skipFallback": false
+        }
+      ],
+      "tag": "dns_out"
     },
     "inbounds": [
-        {
-            "port": 10808,
-            "protocol": "mixed",
-            "settings": {
-                "auth": "noauth",
-                "udp": true,
-                "userLevel": 8
-            },
-            "sniffing": {
-                "destOverride": [
-                    "http",
-                    "tls",
-                    "quic",
-                    "fakedns"
-                ],
-                "enabled": true
-            },
-            "tag": "mixed"
+      {
+        "port": 10808,
+        "protocol": "mixed",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
         },
-        {
-            "port": 10809,
-            "protocol": "http",
-            "settings": {
-                "userLevel": 8
-            },
-            "tag": "http"
-        }
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic",
+            "fakedns"
+          ],
+          "enabled": true
+        },
+        "tag": "mixed"
+      },
+      {
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
     ],
     "log": {
-        "loglevel": "warning"
+      "loglevel": "warning"
     },
     "meta": null,
     "outbounds": [
-        {
-            "protocol": "vless",
-            "settings": {
-                "address": "144.31.215.150",
-                "encryption": "none",
-                "id": "0c0387a1-baa8-4850-9cf7-0aa55b3fa7b3",
-                "port": 52841
-            },
-            "streamSettings": {
-                "network": "xhttp",
-                "realitySettings": {
-                    "fingerprint": "chrome",
-                    "mldsa65Verify": "",
-                    "publicKey": "PEHpMd1NnZe3GqZek2annXrpjuaTKnRLE5k7VYZl_AY",
-                    "serverName": "github.com",
-                    "shortId": "d93397bd02da",
-                    "show": false,
-                    "spiderX": "/JZMzZzqkPrLbKHa"
-                },
-                "security": "reality",
-                "xhttpSettings": {
-                    "headers": {
-                    },
-                    "host": "144.31.215.30",
-                    "mode": "auto",
-                    "noSSEHeader": false,
-                    "path": "/",
-                    "scMaxBufferedPosts": 30,
-                    "scMaxEachPostBytes": "1000000",
-                    "scStreamUpServerSecs": "20-80",
-                    "seqKey": "",
-                    "seqPlacement": "",
-                    "sessionKey": "",
-                    "sessionPlacement": "",
-                    "uplinkChunkSize": 0,
-                    "uplinkDataKey": "",
-                    "uplinkDataPlacement": "",
-                    "uplinkHTTPMethod": "",
-                    "xPaddingBytes": "100-1000",
-                    "xPaddingHeader": "",
-                    "xPaddingKey": "",
-                    "xPaddingMethod": "",
-                    "xPaddingObfsMode": false,
-                    "xPaddingPlacement": ""
-                }
-            },
-            "tag": "proxy"
+      {
+        "protocol": "vless",
+        "settings": {
+          "address": "144.31.215.150",
+          "encryption": "none",
+          "id": "0c0387a1-baa8-4850-9cf7-0aa55b3fa7b3",
+          "port": 52841
         },
-        {
-            "protocol": "freedom",
-            "settings": {
-                "domainStrategy": "AsIs",
-                "noises": [
-                ],
-                "redirect": ""
-            },
-            "tag": "direct"
+        "streamSettings": {
+          "network": "xhttp",
+          "realitySettings": {
+            "fingerprint": "chrome",
+            "mldsa65Verify": "",
+            "publicKey": "PEHpMd1NnZe3GqZek2annXrpjuaTKnRLE5k7VYZl_AY",
+            "serverName": "github.com",
+            "shortId": "d93397bd02da",
+            "show": false,
+            "spiderX": "/JZMzZzqkPrLbKHa"
+          },
+          "security": "reality",
+          "xhttpSettings": {
+            "headers": {},
+            "host": "144.31.215.30",
+            "mode": "auto",
+            "noSSEHeader": false,
+            "path": "/",
+            "scMaxBufferedPosts": 30,
+            "scMaxEachPostBytes": "1000000",
+            "scStreamUpServerSecs": "20-80",
+            "seqKey": "",
+            "seqPlacement": "",
+            "sessionKey": "",
+            "sessionPlacement": "",
+            "uplinkChunkSize": 0,
+            "uplinkDataKey": "",
+            "uplinkDataPlacement": "",
+            "uplinkHTTPMethod": "",
+            "xPaddingBytes": "100-1000",
+            "xPaddingHeader": "",
+            "xPaddingKey": "",
+            "xPaddingMethod": "",
+            "xPaddingObfsMode": false,
+            "xPaddingPlacement": ""
+          }
         },
-        {
-            "protocol": "blackhole",
-            "settings": {
-                "response": {
-                    "type": "http"
-                }
-            },
-            "tag": "block"
-        }
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "AsIs",
+          "noises": [],
+          "redirect": ""
+        },
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
     ],
     "policy": {
-        "levels": {
-            "8": {
-                "connIdle": 300,
-                "downlinkOnly": 1,
-                "handshake": 4,
-                "uplinkOnly": 1
-            }
-        },
-        "system": {
-            "statsOutboundDownlink": true,
-            "statsOutboundUplink": true
+      "levels": {
+        "8": {
+          "connIdle": 300,
+          "downlinkOnly": 1,
+          "handshake": 4,
+          "uplinkOnly": 1
         }
+      },
+      "system": {
+        "statsOutboundDownlink": true,
+        "statsOutboundUplink": true
+      }
     },
     "remarks": "🇩🇪 Германия XHTTP | тгк: @rostunnel",
     "routing": {
-        "domainStrategy": "AsIs",
-        "rules": [
-            {
-                "network": "tcp,udp",
-                "outboundTag": "proxy",
-                "type": "field"
-            }
-        ]
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "network": "tcp,udp",
+          "outboundTag": "proxy",
+          "type": "field"
+        }
+      ]
     },
-    "stats": {
-    }
-},
-{
+    "stats": {}
+  },
+  {
     "dns": {
-        "queryStrategy": "UseIP",
-        "servers": [
-            {
-                "address": "8.8.8.8",
-                "skipFallback": false
-            }
-        ],
-        "tag": "dns_out"
+      "queryStrategy": "UseIP",
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "skipFallback": false
+        }
+      ],
+      "tag": "dns_out"
     },
     "inbounds": [
-        {
-            "port": 10808,
-            "protocol": "mixed",
-            "settings": {
-                "auth": "noauth",
-                "udp": true,
-                "userLevel": 8
-            },
-            "sniffing": {
-                "destOverride": [
-                    "http",
-                    "tls",
-                    "quic",
-                    "fakedns"
-                ],
-                "enabled": true
-            },
-            "tag": "mixed"
+      {
+        "port": 10808,
+        "protocol": "mixed",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
         },
-        {
-            "port": 10809,
-            "protocol": "http",
-            "settings": {
-                "userLevel": 8
-            },
-            "tag": "http"
-        }
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic",
+            "fakedns"
+          ],
+          "enabled": true
+        },
+        "tag": "mixed"
+      },
+      {
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
     ],
     "log": {
-        "loglevel": "warning"
+      "loglevel": "warning"
     },
     "meta": null,
     "outbounds": [
-        {
-            "protocol": "vless",
-            "settings": {
-                "address": "144.31.215.150",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision",
-                "id": "558f4037-ec22-4294-b6b6-40c10dc57ea5",
-                "port": 40015
-            },
-            "streamSettings": {
-                "network": "tcp",
-                "realitySettings": {
-                    "fingerprint": "chrome",
-                    "mldsa65Verify": "",
-                    "publicKey": "6m8o6kkFR2sDrnnEblmlb0y2qqmj7tvG89-JJ3IbWC0",
-                    "serverName": "github.com",
-                    "shortId": "9e881efaab56d64b",
-                    "show": false,
-                    "spiderX": "/MxoeYHLGJJADYhb"
-                },
-                "security": "reality",
-                "tcpSettings": {
-                    "header": {
-                        "type": "none"
-                    }
-                }
-            },
-            "tag": "proxy"
+      {
+        "protocol": "vless",
+        "settings": {
+          "address": "144.31.215.150",
+          "encryption": "none",
+          "flow": "xtls-rprx-vision",
+          "id": "558f4037-ec22-4294-b6b6-40c10dc57ea5",
+          "port": 40015
         },
-        {
-            "protocol": "freedom",
-            "settings": {
-                "domainStrategy": "AsIs",
-                "noises": [
-                ],
-                "redirect": ""
-            },
-            "tag": "direct"
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {
+            "fingerprint": "chrome",
+            "mldsa65Verify": "",
+            "publicKey": "6m8o6kkFR2sDrnnEblmlb0y2qqmj7tvG89-JJ3IbWC0",
+            "serverName": "github.com",
+            "shortId": "9e881efaab56d64b",
+            "show": false,
+            "spiderX": "/MxoeYHLGJJADYhb"
+          },
+          "security": "reality",
+          "tcpSettings": {
+            "header": {
+              "type": "none"
+            }
+          }
         },
-        {
-            "protocol": "blackhole",
-            "settings": {
-                "response": {
-                    "type": "http"
-                }
-            },
-            "tag": "block"
-        }
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "AsIs",
+          "noises": [],
+          "redirect": ""
+        },
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
     ],
     "policy": {
-        "levels": {
-            "8": {
-                "connIdle": 300,
-                "downlinkOnly": 1,
-                "handshake": 4,
-                "uplinkOnly": 1
-            }
-        },
-        "system": {
-            "statsOutboundDownlink": true,
-            "statsOutboundUplink": true
+      "levels": {
+        "8": {
+          "connIdle": 300,
+          "downlinkOnly": 1,
+          "handshake": 4,
+          "uplinkOnly": 1
         }
+      },
+      "system": {
+        "statsOutboundDownlink": true,
+        "statsOutboundUplink": true
+      }
     },
     "remarks": "🇩🇪 Германия TCP | тгк: @rostunnel",
     "routing": {
-        "domainStrategy": "AsIs",
-        "rules": [
-            {
-                "network": "tcp,udp",
-                "outboundTag": "proxy",
-                "type": "field"
-            }
-        ]
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "network": "tcp,udp",
+          "outboundTag": "proxy",
+          "type": "field"
+        }
+      ]
     },
-    "stats": {
-    }
-}
+    "stats": {}
+  },
+  {
+    "dns": {
+      "queryStrategy": "UseIP",
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "skipFallback": false
+        }
+      ],
+      "tag": "dns_out"
+    },
+    "inbounds": [
+      {
+        "port": 10808,
+        "protocol": "mixed",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic",
+            "fakedns"
+          ],
+          "enabled": true
+        },
+        "tag": "mixed"
+      },
+      {
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "meta": null,
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": -1,
+          "enabled": false,
+          "xudpConcurrency": 8,
+          "xudpProxyUDP443": ""
+        },
+        "protocol": "hysteria",
+        "settings": {
+          "address": "150.241.65.18",
+          "port": 2026,
+          "version": 2
+        },
+        "streamSettings": {
+          "hysteriaSettings": {
+            "auth": "rstnnl:OdAee0iXQALGJNhMVDnhA79WZoyqMse6",
+            "version": 2
+          },
+          "network": "hysteria",
+          "security": "tls",
+          "tlsSettings": {
+            "allowInsecure": false,
+            "alpn": [
+              "h3"
+            ],
+            "pinnedPeerCertSha256": "056212681af37d1b38be89047d054b544254cd97d411b510efa1e59d131169a9",
+            "serverName": "rstnnl.duckdns.org",
+            "show": false
+          },
+          "udpmasks": [
+            {
+              "settings": {
+                "password": "Tf5I2lqED0q2SvBVT0CmukW0ap3lyKto"
+              },
+              "type": "salamander"
+            }
+          ]
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIP"
+        },
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "policy": {
+      "levels": {
+        "8": {
+          "connIdle": 300,
+          "downlinkOnly": 1,
+          "handshake": 4,
+          "uplinkOnly": 1
+        }
+      },
+      "system": {
+        "statsOutboundDownlink": true,
+        "statsOutboundUplink": true
+      }
+    },
+    "remarks": "🇸🇪 Швеция | тгк: @rostunnel",
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "network": "tcp,udp",
+          "outboundTag": "proxy",
+          "type": "field"
+        }
+      ]
+    },
+    "stats": {}
+  }
 ]
