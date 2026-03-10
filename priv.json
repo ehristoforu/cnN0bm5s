@@ -871,13 +871,13 @@
         "concurrency": -1,
         "enabled": false,
         "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
+        "xudpProxyUDP443": "xudp"
       },
       "protocol": "vless",
       "settings": {
         "vnext": [
           {
-            "address": "185.147.27.6",
+            "address": "194.55.244.200",
             "port": 843,
             "users": [
               {
@@ -896,10 +896,10 @@
         "security": "reality",
         "realitySettings": {
           "allowInsecure": false,
-          "fingerprint": "chrome",
+          "fingerprint": "qq",
           "publicKey": "mtBArpboH_OF7Z_tsIAmNlYTK5h0fjxVsZKz91KE03s",
           "serverName": "hls-svod.itunes.apple.com",
-          "shortId": "6a608eaf9117",
+          "shortId": "bf45",
           "show": false,
           "spiderX": "/"
         },
@@ -1471,19 +1471,19 @@
         "concurrency": -1,
         "enabled": false,
         "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
+        "xudpProxyUDP443": "xudp"
       },
       "protocol": "vless",
       "settings": {
         "vnext": [
           {
-            "address": "109.120.189.91",
+            "address": "37.139.33.52",
             "port": 443,
             "users": [
               {
                 "encryption": "none",
                 "flow": "xtls-rprx-vision",
-                "id": "d0722d01-7ee8-07d0-85e1-d590ad0e60d3",
+                "id": "7f4a709c-60e9-4006-9ac6-cb9f005ae3ca",
                 "level": 8,
                 "security": "auto"
               }
@@ -1496,10 +1496,10 @@
         "security": "reality",
         "realitySettings": {
           "allowInsecure": false,
-          "fingerprint": "qq",
-          "publicKey": "4CH3o5zOMcFNMbnwXnkAg0FFepmsc0QzhahXkUzb1ik",
-          "serverName": "max.ru",
-          "shortId": "d8c6b58bcbb0c323",
+          "fingerprint": "chrome",
+          "publicKey": "itChlzYnj7xu0-o776CzSu4BECllDKkrpsKVlNT5Fw0",
+          "serverName": "m.vk.com",
+          "shortId": "1de6f79b957b8b5c",
           "show": false,
           "spiderX": "/"
         },
@@ -1671,19 +1671,19 @@
         "concurrency": -1,
         "enabled": false,
         "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
+        "xudpProxyUDP443": "xudp"
       },
       "protocol": "vless",
       "settings": {
         "vnext": [
           {
-            "address": "185.80.91.12",
-            "port": 28933,
+            "address": "84.201.136.24",
+            "port": 443,
             "users": [
               {
                 "encryption": "none",
                 "flow": "xtls-rprx-vision",
-                "id": "a9af5277-8245-45a7-97be-f3c9fcd4ad6c",
+                "id": "7f4a709c-60e9-4006-9ac6-cb9f005ae3ca",
                 "level": 8,
                 "security": "auto"
               }
@@ -1697,9 +1697,9 @@
         "realitySettings": {
           "allowInsecure": false,
           "fingerprint": "chrome",
-          "publicKey": "6qVBeg9qlJRuo_AIi2C-Dke58Z79uzvXQo38Jw5QsCw",
-          "serverName": "ads.x5.ru",
-          "shortId": "668eda32",
+          "publicKey": "iGJ2pz2VpNyS4Ezw7rUW3j-gxCOb5fgkwkRKvegYMQ4",
+          "serverName": "cdnv-img.perekrestok.ru",
+          "shortId": "029d04112902339a",
           "show": false,
           "spiderX": "/"
         },
