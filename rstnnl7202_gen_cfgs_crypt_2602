@@ -360,22 +360,14 @@
   {
     "dns": {
       "hosts": {
+        "domain:googleapis.cn": "googleapis.com",
         "cloudflare-dns.com": "1.1.1.1",
         "dns.google": "8.8.8.8"
       },
       "queryStrategy": "UseIPv4",
       "servers": [
-        "https://cloudflare-dns.com/dns-query",
-        {
-          "address": "https://cloudflare-dns.com/dns-query",
-          "domains": [
-            "geosite:refilter"
-          ]
-        },
-        {
-          "address": "https://dns.google/dns-query",
-          "domains": []
-        }
+        "1.1.1.1",
+        "8.8.8.8"
       ]
     },
     "inbounds": [
@@ -426,25 +418,18 @@
       }
     ],
     "log": {
-      "loglevel": "debug"
+      "loglevel": "warning"
     },
     "metrics": {
       "tag": "metrics_out"
     },
     "outbounds": [
       {
-        "protocol": "freedom",
-        "settings": {
-          "domainStrategy": "UseIP"
-        },
-        "tag": "direct"
-      },
-      {
         "mux": {
           "concurrency": -1,
           "enabled": false,
           "xudpConcurrency": 8,
-          "xudpProxyUDP443": ""
+          "xudpProxyUDP443": "xudp"
         },
         "protocol": "vless",
         "settings": {
@@ -455,6 +440,7 @@
               "users": [
                 {
                   "encryption": "none",
+                  "flow": "",
                   "id": "0c0387a1-baa8-4850-9cf7-0aa55b3fa7b3",
                   "level": 8,
                   "security": "auto"
@@ -468,11 +454,6 @@
           "security": "tls",
           "tlsSettings": {
             "allowInsecure": false,
-            "alpn": [
-              "h2",
-              "http/1.1",
-              "h3"
-            ],
             "fingerprint": "chrome",
             "publicKey": "",
             "serverName": "github.com",
@@ -490,6 +471,13 @@
           }
         },
         "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIP"
+        },
+        "tag": "direct"
       },
       {
         "protocol": "blackhole",
@@ -575,22 +563,14 @@
   {
     "dns": {
       "hosts": {
+        "domain:googleapis.cn": "googleapis.com",
         "cloudflare-dns.com": "1.1.1.1",
         "dns.google": "8.8.8.8"
       },
       "queryStrategy": "UseIPv4",
       "servers": [
-        "https://cloudflare-dns.com/dns-query",
-        {
-          "address": "https://cloudflare-dns.com/dns-query",
-          "domains": [
-            "geosite:refilter"
-          ]
-        },
-        {
-          "address": "https://dns.google/dns-query",
-          "domains": []
-        }
+        "1.1.1.1",
+        "8.8.8.8"
       ]
     },
     "inbounds": [
@@ -641,25 +621,18 @@
       }
     ],
     "log": {
-      "loglevel": "debug"
+      "loglevel": "warning"
     },
     "metrics": {
       "tag": "metrics_out"
     },
     "outbounds": [
       {
-        "protocol": "freedom",
-        "settings": {
-          "domainStrategy": "UseIP"
-        },
-        "tag": "direct"
-      },
-      {
         "mux": {
           "concurrency": -1,
           "enabled": false,
           "xudpConcurrency": 8,
-          "xudpProxyUDP443": ""
+          "xudpProxyUDP443": "xudp"
         },
         "protocol": "vless",
         "settings": {
@@ -681,25 +654,30 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "tls",
+          "security": "reality",
+          "realitySettings": {
+            "allowInsecure": false,
+            "fingerprint": "chrome",
+            "publicKey": "6m8o6kkFR2sDrnnEblmlb0y2qqmj7tvG89-JJ3IbWC0",
+            "serverName": "github.com",
+            "shortId": "4aae38178ea3",
+            "show": false,
+            "spiderX": "/"
+          },
           "tcpSettings": {
             "header": {
               "type": "none"
             }
-          },
-          "tlsSettings": {
-            "allowInsecure": false,
-            "alpn": [
-              "h2",
-              "http/1.1",
-              "h3"
-            ],
-            "fingerprint": "chrome",
-            "serverName": "github.com",
-            "show": false
           }
         },
         "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIP"
+        },
+        "tag": "direct"
       },
       {
         "protocol": "blackhole",
@@ -785,22 +763,14 @@
   {
     "dns": {
       "hosts": {
+        "domain:googleapis.cn": "googleapis.com",
         "cloudflare-dns.com": "1.1.1.1",
         "dns.google": "8.8.8.8"
       },
       "queryStrategy": "UseIPv4",
       "servers": [
-        "https://cloudflare-dns.com/dns-query",
-        {
-          "address": "https://cloudflare-dns.com/dns-query",
-          "domains": [
-            "geosite:refilter"
-          ]
-        },
-        {
-          "address": "https://dns.google/dns-query",
-          "domains": []
-        }
+        "1.1.1.1",
+        "8.8.8.8"
       ]
     },
     "inbounds": [
@@ -851,19 +821,12 @@
       }
     ],
     "log": {
-      "loglevel": "debug"
+      "loglevel": "warning"
     },
     "metrics": {
       "tag": "metrics_out"
     },
     "outbounds": [
-      {
-        "protocol": "freedom",
-        "settings": {
-          "domainStrategy": "UseIP"
-        },
-        "tag": "direct"
-      },
       {
         "mux": {
           "concurrency": -1,
@@ -875,11 +838,13 @@
         "settings": {
           "address": "150.241.65.18",
           "port": 2026,
-          "version": 2
+          "version": 2,
+          "obfs": "salamander",
+          "obfsPassword": "8CSYg2AJ1Hr1t52SScio8ME3yE6nrmH"
         },
         "streamSettings": {
           "hysteriaSettings": {
-            "auth": "rstnnl:pJqj9jh9BhY88Wxk5ue9PbN04QbZr8lg",
+            "auth": "rstnnl",
             "version": 2
           },
           "network": "hysteria",
@@ -891,17 +856,16 @@
             ],
             "serverName": "rstnnl.duckdns.org",
             "show": false
-          },
-          "udpmasks": [
-            {
-              "settings": {
-                "password": "8CSYg2AJ1Hr1t52SScio8ME3yE6nrmH"
-              },
-              "type": "salamander"
-            }
-          ]
+          }
         },
         "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "UseIP"
+        },
+        "tag": "direct"
       },
       {
         "protocol": "blackhole",
