@@ -698,7 +698,7 @@
         "statsOutboundUplink": true
       }
     },
-    "remarks": "🇩🇪 Германия TCP | тгк: @rostunnel",
+    "remarks": "🇩🇪 Германия | тгк: @rostunnel",
     "routing": {
       "domainStrategy": "IPIfNonMatch",
       "rules": [
