@@ -865,7 +865,7 @@
         "statsOutboundUplink": true
       }
     },
-    "remarks": "IPv4",
+    "remarks": "🇸🇪 Швеция | тгк: @rostunnel",
     "routing": {
       "domainStrategy": "IPIfNonMatch",
       "rules": [
