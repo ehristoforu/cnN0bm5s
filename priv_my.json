@@ -82,13 +82,13 @@
       "settings": {
         "vnext": [
           {
-            "address": "144.31.215.150",
-            "port": 52841,
+            "address": "193.233.49.120",
+            "port": 34046,
             "users": [
               {
                 "encryption": "none",
-                "flow": "",
-                "id": "0c0387a1-baa8-4850-9cf7-0aa55b3fa7b3",
+                "flow": "xtls-rprx-vision",
+                "id": "ece73d96-ef1e-4f1e-8f78-7db8ab3ecda4",
                 "level": 8,
                 "security": "auto"
               }
@@ -97,16 +97,21 @@
         ]
       },
       "streamSettings": {
-        "network": "xhttp",
+        "network": "tcp",
         "security": "reality",
         "realitySettings": {
           "allowInsecure": false,
           "fingerprint": "chrome",
-          "publicKey": "PEHpMd1NnZe3GqZek2annXrpjuaTKnRLE5k7VYZl_AY",
-          "serverName": "github.com",
-          "shortId": "1e9dcaf377f0d809",
+          "publicKey": "6qVBeg9qlJRuo_AIi2C-Dke58Z79uzvXQo38Jw5QsCw",
+          "serverName": "www.vk.com",
+          "shortId": "de636ea175ff8ccc",
           "show": false,
           "spiderX": "/"
+        },
+        "tcpSettings": {
+          "header": {
+            "type": "none"
+          }
         }
       }
     },
@@ -147,7 +152,7 @@
       "statsOutboundUplink": true
     }
   },
-  "remarks": "🇩🇪 Германия XHTTP | тгк: @rostunnel",
+  "remarks": "🔥 Умный | тгк: @rostunnel",
   "routing": {
     "domainStrategy": "IPIfNonMatch",
     "rules": [
