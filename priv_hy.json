@@ -6,18 +6,7 @@
         "queryStrategy": "UseIPv4",
         "servers": [
             "1.1.1.1",
-            {
-                "address": "1.1.1.1",
-                "domains": [
-                ],
-                "port": 53
-            },
-            {
-                "address": "8.8.8.8",
-                "domains": [
-                ],
-                "port": 53
-            }
+            "8.8.8.8"
         ]
     },
     "inbounds": [
@@ -68,14 +57,19 @@
         }
     ],
     "log": {
-        "loglevel": "debug"
+        "loglevel": "warning"
     },
-    "meta": null,
+    "meta": {
+        "serverDescription": ""
+    },
     "metrics": {
         "tag": "metrics_out"
     },
     "outbounds": [
         {
+            "meta": {
+                "serverDescription": ""
+            },
             "mux": {
                 "concurrency": -1,
                 "enabled": false,
@@ -85,12 +79,13 @@
             "protocol": "hysteria",
             "settings": {
                 "address": "150.241.65.18",
+                "mportHopInt": 0,
                 "port": 2026,
                 "version": 2
             },
             "streamSettings": {
                 "hysteriaSettings": {
-                    "auth": "rstnnl:OdAee0iXQALGJNhMVDnhA79WZoyqMse6",
+                    "auth": "rstnnl",
                     "version": 2
                 },
                 "network": "hysteria",
@@ -100,7 +95,6 @@
                     "alpn": [
                         "h3"
                     ],
-                    "pinnedPeerCertSha256": "056212681af37d1b38be89047d054b544254cd97d411b510efa1e59d131169a9",
                     "serverName": "rstnnl.duckdns.org",
                     "show": false
                 }
@@ -144,7 +138,7 @@
             "statsOutboundUplink": true
         }
     },
-    "remarks": "IPv4",
+    "remarks": "🇸🇪 Швеция | тгк: @rostunnel",
     "routing": {
         "domainStrategy": "IPIfNonMatch",
         "rules": [
