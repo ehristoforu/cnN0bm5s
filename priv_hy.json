@@ -66,59 +66,56 @@
   "meta": {
     "serverDescription": ""
   },
-  "outbounds": [
-    {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
-      "mux": {
-        "concurrency": -1,
-        "enabled": false,
-        "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
-      },
-      "protocol": "hysteria",
-      "settings": {
-        "address": "150.241.65.18",
-        "port": 2026,
-        "version": 2,
-        "mportHopInt": 0
-      },
-      "streamSettings": {
-        "hysteriaSettings": {
-          "auth": "rstnnl",
-          "version": 2
+"outbounds": [
+        {
+            "mux": {
+                "concurrency": -1,
+                "enabled": false,
+                "xudpConcurrency": 8,
+                "xudpProxyUDP443": ""
+            },
+            "protocol": "hysteria",
+            "settings": {
+                "address": "150.241.65.18",
+                "port": 2026,
+                "version": 2
+            },
+            "streamSettings": {
+                "hysteriaSettings": {
+                    "auth": "rstnnl:OdAee0iXQALGJNhMVDnhA79WZoyqMse6",
+                    "version": 2
+                },
+                "network": "hysteria",
+                "security": "tls",
+                "tlsSettings": {
+                    "allowInsecure": false,
+                    "alpn": [
+                        "h3"
+                    ],
+                    "pinnedPeerCertSha256": "056212681af37d1b38be89047d054b544254cd97d411b510efa1e59d131169a9",
+                    "serverName": "rstnnl.duckdns.org",
+                    "show": false
+                }
+            },
+            "tag": "proxy"
         },
-        "network": "hysteria",
-        "security": "tls",
-        "tlsSettings": {
-          "allowInsecure": false,
-          "alpn": [
-            "h3"
-          ],
-          "serverName": "rstnnl.duckdns.org",
-          "show": false
+        {
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "UseIP"
+            },
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "settings": {
+                "response": {
+                    "type": "http"
+                }
+            },
+            "tag": "block"
         }
-      }
-    },
-    {
-      "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "UseIP"
-      },
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "settings": {
-        "response": {
-          "type": "http"
-        }
-      },
-      "tag": "block"
-    }
-  ],
+    ],
   "policy": {
     "levels": {
       "0": {

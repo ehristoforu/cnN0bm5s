@@ -797,10 +797,6 @@
     },
     "outbounds": [
       {
-        "tag": "proxy",
-        "meta": {
-          "serverDescription": ""
-        },
         "mux": {
           "concurrency": -1,
           "enabled": false,
@@ -811,12 +807,11 @@
         "settings": {
           "address": "150.241.65.18",
           "port": 2026,
-          "version": 2,
-          "mportHopInt": 0
+          "version": 2
         },
         "streamSettings": {
           "hysteriaSettings": {
-            "auth": "rstnnl",
+            "auth": "rstnnl:OdAee0iXQALGJNhMVDnhA79WZoyqMse6",
             "version": 2
           },
           "network": "hysteria",
@@ -826,10 +821,12 @@
             "alpn": [
               "h3"
             ],
+            "pinnedPeerCertSha256": "056212681af37d1b38be89047d054b544254cd97d411b510efa1e59d131169a9",
             "serverName": "rstnnl.duckdns.org",
             "show": false
           }
-        }
+        },
+        "tag": "proxy"
       },
       {
         "protocol": "freedom",
