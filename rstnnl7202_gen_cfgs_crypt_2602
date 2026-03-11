@@ -798,6 +798,7 @@
     "log": {
       "loglevel": "debug"
     },
+    "meta": null,
     "metrics": {
       "tag": "metrics_out"
     },
