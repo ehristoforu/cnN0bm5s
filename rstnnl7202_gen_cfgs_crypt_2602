@@ -1364,7 +1364,7 @@
         "settings": {
           "vnext": [
             {
-              "address": "144.31.3.73",
+              "address": "144.31.5.46",
               "port": 8844,
               "users": [
                 {
@@ -1383,10 +1383,10 @@
           "security": "reality",
           "realitySettings": {
             "allowInsecure": false,
-            "fingerprint": "randomized",
+            "fingerprint": "qq",
             "publicKey": "7Jm9DCACq0CcHAqEJD0aReVMUc2l6mFQdYex3owLMVk",
             "serverName": "cloudflare.com",
-            "shortId": "08",
+            "shortId": "825867",
             "show": false,
             "spiderX": "/"
           },
@@ -1571,10 +1571,10 @@
           "security": "reality",
           "realitySettings": {
             "allowInsecure": false,
-            "fingerprint": "chrome",
+            "fingerprint": "random",
             "publicKey": "7Jm9DCACq0CcHAqEJD0aReVMUc2l6mFQdYex3owLMVk",
             "serverName": "hls-svod.itunes.apple.com",
-            "shortId": "bf45",
+            "shortId": "825867",
             "show": false,
             "spiderX": "/"
           },
@@ -1740,13 +1740,13 @@
         "settings": {
           "vnext": [
             {
-              "address": "194.55.244.200",
-              "port": 843,
+              "address": "195.209.216.167",
+              "port": 57140,
               "users": [
                 {
                   "encryption": "none",
                   "flow": "xtls-rprx-vision",
-                  "id": "e1b7c66e-ba8f-4ac5-bcef-29f60750b8a8",
+                  "id": "564f4df2-a5c1-4800-92e5-e73d64e157dc",
                   "level": 8,
                   "security": "auto"
                 }
@@ -1759,10 +1759,10 @@
           "security": "reality",
           "realitySettings": {
             "allowInsecure": false,
-            "fingerprint": "safari",
-            "publicKey": "mtBArpboH_OF7Z_tsIAmNlYTK5h0fjxVsZKz91KE03s",
-            "serverName": "hls-svod.itunes.apple.com",
-            "shortId": "c05d4c564d2bcd",
+            "fingerprint": "chrome",
+            "publicKey": "8tXNvB0bLIgwvrMx4MXKvbR-xvy5Z7uJ2pUIWzDvNkw",
+            "serverName": "www.vk.com",
+            "shortId": "f78ebbd566a09aaf",
             "show": false,
             "spiderX": "/"
           },
@@ -1928,13 +1928,13 @@
         "settings": {
           "vnext": [
             {
-              "address": "109.120.189.8",
-              "port": 52006,
+              "address": "84.201.135.213",
+              "port": 7443,
               "users": [
                 {
                   "encryption": "none",
                   "flow": "xtls-rprx-vision",
-                  "id": "fba7dc74-ed99-0bb8-8b5f-a822f254475f",
+                  "id": "5f752bea-78df-4f0a-9531-bab1e28d5f9c",
                   "level": 8,
                   "security": "auto"
                 }
@@ -1947,10 +1947,10 @@
           "security": "reality",
           "realitySettings": {
             "allowInsecure": false,
-            "fingerprint": "qq",
-            "publicKey": "4CH3o5zOMcFNMbnwXnkAg0FFepmsc0QzhahXkUzb1ik",
-            "serverName": "max.ru",
-            "shortId": "d8c6b58bcbb0c323",
+            "fingerprint": "firefox",
+            "publicKey": "lLwGgX3RpFMjsqEGat0Hvv4auFkbSQpWJBvvSnoaRxI",
+            "serverName": "maps.yandex.ru",
+            "shortId": "999d1a0864ac38b9",
             "show": false,
             "spiderX": "/"
           },
@@ -2492,7 +2492,7 @@
         "settings": {
           "vnext": [
             {
-              "address": "84.201.136.24",
+              "address": "84.201.133.200",
               "port": 443,
               "users": [
                 {
