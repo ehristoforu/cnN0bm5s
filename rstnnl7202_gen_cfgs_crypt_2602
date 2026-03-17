@@ -455,7 +455,7 @@
                 {
                   "encryption": "none",
                   "flow": "xtls-rprx-vision",
-                  "id": "558f4037-ec22-4294-b6b6-40c10dc57ea5",
+                  "id": "5b323ff2-6ebc-4da1-acb7-a9e654a39f5a",
                   "level": 8,
                   "security": "auto"
                 }
