@@ -6,6 +6,8 @@
     },
     "queryStrategy": "UseIPv4",
     "servers": [
+      "77.88.8.8",
+      "77.88.8.1",
       "1.1.1.1",
       "8.8.8.8"
     ]
@@ -82,13 +84,13 @@
       "settings": {
         "vnext": [
           {
-            "address": "64.188.107.157",
-            "port": 443,
+            "address": "51.250.96.255",
+            "port": 8443,
             "users": [
               {
                 "encryption": "none",
-                "flow": "xtls-rprx-vision",
-                "id": "a1eb13d5-cae6-4a4d-a7ac-994a51c47336",
+                "flow": "",
+                "id": "ff9bfb65-76bb-4338-8919-ccbb0d7c123b",
                 "level": 8,
                 "security": "auto"
               }
@@ -97,21 +99,20 @@
         ]
       },
       "streamSettings": {
-        "network": "tcp",
+        "network": "grpc",
         "security": "reality",
         "realitySettings": {
           "allowInsecure": false,
-          "fingerprint": "chrome",
-          "publicKey": "26i6LH5ZdNW7ki_j60pR2pp-SeEbs7QINzQooLQYei8",
-          "serverName": "www.microsoft.com",
-          "shortId": "6eaf8250",
+          "fingerprint": "qq",
+          "publicKey": "J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs",
+          "serverName": "ads.x5.ru",
+          "shortId": "6b2f4e6ac9b1d2f0",
           "show": false,
-          "spiderX": "/"
+          "spiderX": "grpc"
         },
-        "tcpSettings": {
-          "header": {
-            "type": "none"
-          }
+        "grpcSettings": {
+          "serviceName": "grpc",
+          "multiMode": false
         }
       }
     },
@@ -152,7 +153,7 @@
       "statsOutboundUplink": true
     }
   },
-  "remarks": "🇫🇮 Финляндия | тгк: @rostunnel",
+  "remarks": "🇷🇺 Анти-Шатдаун 1 🔥 | тгк: @rostunnel",
   "routing": {
     "domainStrategy": "IPIfNonMatch",
     "rules": [
@@ -194,6 +195,8 @@
     },
     "queryStrategy": "UseIPv4",
     "servers": [
+      "77.88.8.8",
+      "77.88.8.1",
       "1.1.1.1",
       "8.8.8.8"
     ]
@@ -270,13 +273,13 @@
       "settings": {
         "vnext": [
           {
-            "address": "45.12.143.175",
-            "port": 443,
+            "address": "51.250.96.255",
+            "port": 7443,
             "users": [
               {
                 "encryption": "none",
                 "flow": "xtls-rprx-vision",
-                "id": "a1eb13d5-cae6-4a4d-a7ac-994a51c47336",
+                "id": "4e90336b-6eee-4c12-a8d7-2ad825ae08f7",
                 "level": 8,
                 "security": "auto"
               }
@@ -289,10 +292,10 @@
         "security": "reality",
         "realitySettings": {
           "allowInsecure": false,
-          "fingerprint": "chrome",
-          "publicKey": "kV4Q5fZiXSD61ZRKEWXsIjhRCTLYzIudpR2AudimqVk",
-          "serverName": "www.microsoft.com",
-          "shortId": "0ec44671",
+          "fingerprint": "qq",
+          "publicKey": "J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs",
+          "serverName": "ads.x5.ru",
+          "shortId": "a20d3ed244c76426",
           "show": false,
           "spiderX": "/"
         },
@@ -340,195 +343,7 @@
       "statsOutboundUplink": true
     }
   },
-  "remarks": "🇹🇷 Турция | тгк: @rostunnel",
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "inboundTag": [
-          "metrics_in"
-        ],
-        "outboundTag": "metrics_out"
-      },
-      {
-        "inboundTag": [
-          "socks"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "1.1.1.1"
-        ],
-        "outboundTag": "proxy",
-        "port": "53"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
-      }
-    ]
-  },
-  "stats": {}
-},
-{
-  "dns": {
-    "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
-    },
-    "queryStrategy": "UseIPv4",
-    "servers": [
-      "1.1.1.1",
-      "8.8.8.8"
-    ]
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true,
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "socks"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ],
-        "enabled": true
-      },
-      "tag": "http"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 11111,
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "127.0.0.1"
-      },
-      "tag": "metrics_in"
-    }
-  ],
-  "log": {
-    "loglevel": "warning"
-  },
-  "metrics": {
-    "tag": "metrics_out"
-  },
-  "meta": {
-    "serverDescription": ""
-  },
-  "outbounds": [
-    {
-      "tag": "proxy",
-      "meta": {
-        "serverDescription": ""
-      },
-      "mux": {
-        "concurrency": -1,
-        "enabled": false,
-        "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
-      },
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "94.131.104.241",
-            "port": 8844,
-            "users": [
-              {
-                "encryption": "none",
-                "flow": "xtls-rprx-vision",
-                "id": "e1b7c66e-ba8f-4ac5-bcef-29f60750b8a8",
-                "level": 8,
-                "security": "auto"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "allowInsecure": false,
-          "fingerprint": "random",
-          "publicKey": "7Jm9DCACq0CcHAqEJD0aReVMUc2l6mFQdYex3owLMVk",
-          "serverName": "hls-svod.itunes.apple.com",
-          "shortId": "825867",
-          "show": false,
-          "spiderX": "/"
-        },
-        "tcpSettings": {
-          "header": {
-            "type": "none"
-          }
-        }
-      }
-    },
-    {
-      "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "UseIP"
-      },
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "settings": {
-        "response": {
-          "type": "http"
-        }
-      },
-      "tag": "block"
-    }
-  ],
-  "policy": {
-    "levels": {
-      "0": {
-        "statsUserDownlink": true,
-        "statsUserUplink": true
-      },
-      "8": {
-        "connIdle": 300,
-        "downlinkOnly": 1,
-        "handshake": 4,
-        "uplinkOnly": 1
-      }
-    },
-    "system": {
-      "statsInboundDownlink": true,
-      "statsInboundUplink": true,
-      "statsOutboundDownlink": true,
-      "statsOutboundUplink": true
-    }
-  },
-  "remarks": "🇳🇱 ☠️ P2P/Торренты | тгк: @rostunnel",
+  "remarks": "🇷🇺 Анти-Шатдаун 2 🔥 | тгк: @rostunnel",
   "routing": {
     "domainStrategy": "IPIfNonMatch",
     "rules": [

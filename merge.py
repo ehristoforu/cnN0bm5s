@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-files = ["priv_nad.json", "priv_my.json", "priv_hy.json", "obsh_bs_mini.json", "obsh_bs_small.json", "obsh_bs.json"]  # ← свои файлы сюда
+files = ["priv_nad.json", "priv_my.json", "priv_hy.json", "priv_bs.json", "obsh_bs_mini.json", "obsh_bs_small.json", "obsh_bs.json"]  # ← свои файлы сюда
 
 all_configs = []
 
