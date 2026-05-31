@@ -1,0 +1,1 @@
+mierus://2CKHRNWO:LeAbnObj@45.192.12.240:1080?transport=UDP&multiplexing=MULTIPLEXING_LOW&server_ports=2100-2110#testmieru
